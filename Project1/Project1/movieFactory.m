@@ -12,7 +12,7 @@
 
 +(baseMovie *)createMovie: (int)movieType;
 {
-    return [[comedyMovie alloc] init];
+    return [[avatarMovie alloc] init];
 }
 
 @end

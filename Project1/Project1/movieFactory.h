@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "baseMovie.h"
-#import "comedyMovie.h"
-#import "actionMovie.h"
-#import "romanceMovie.h"
+#import "avatarMovie.h"
+#import "titanicMovie.h"
+#import "tangledMovie.h"
+
 
 @interface movieFactory : NSObject
 

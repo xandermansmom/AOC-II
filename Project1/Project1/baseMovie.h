@@ -15,17 +15,18 @@
 }
 
 typedef enum {
-    COMEDY,
-    ACTION,
-    ROMANCE 
+    AVATAR,
+    TITANIC,
+    TANGLED
 } movieEnum;
 
 
 //data members for minutes of the movie, movie gross, director and array of actors
 
-@property int *movieMinutes;
-@property float *movieCost;
-@property float *movieMinutesConv;
+@property int movieMinutes;
+@property float productionCost;
+@property float marketingCost;
+@property float movieMinutesConv;
 @property NSString *director;
 @property NSArray *actors;
 
@@ -35,7 +36,7 @@ typedef enum {
 
 //calculation/manipulation method to figure cost per minute of making the movie
 
--(void)calculateMovieCostPerMinute;
+-(void)calculateProductionCostPerMinute;
 
 
 

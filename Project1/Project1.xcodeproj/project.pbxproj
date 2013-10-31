@@ -26,9 +26,9 @@
 		6E9A4FD41821CDD100FBABA1 /* Project1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FD31821CDD100FBABA1 /* Project1Tests.m */; };
 		6E9A4FDF1821CDFA00FBABA1 /* movieFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FDE1821CDFA00FBABA1 /* movieFactory.m */; };
 		6E9A4FE51821CEEE00FBABA1 /* baseMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FE41821CEEE00FBABA1 /* baseMovie.m */; };
-		6E9A4FEB1821CF8800FBABA1 /* comedyMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FEA1821CF8800FBABA1 /* comedyMovie.m */; };
-		6E9A4FEE1821CF9800FBABA1 /* actionMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FED1821CF9800FBABA1 /* actionMovie.m */; };
-		6E9A4FF11821CFAA00FBABA1 /* romanceMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FF01821CFAA00FBABA1 /* romanceMovie.m */; };
+		6E9A4FF41822E04D00FBABA1 /* avatarMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FF31822E04D00FBABA1 /* avatarMovie.m */; };
+		6E9A4FF71822E17400FBABA1 /* titanicMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FF61822E17400FBABA1 /* titanicMovie.m */; };
+		6E9A4FFA1822E18700FBABA1 /* tangledMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A4FF91822E18700FBABA1 /* tangledMovie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,12 +69,12 @@
 		6E9A4FDE1821CDFA00FBABA1 /* movieFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = movieFactory.m; sourceTree = "<group>"; };
 		6E9A4FE31821CEEE00FBABA1 /* baseMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseMovie.h; sourceTree = "<group>"; };
 		6E9A4FE41821CEEE00FBABA1 /* baseMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseMovie.m; sourceTree = "<group>"; };
-		6E9A4FE91821CF8800FBABA1 /* comedyMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = comedyMovie.h; sourceTree = "<group>"; };
-		6E9A4FEA1821CF8800FBABA1 /* comedyMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = comedyMovie.m; sourceTree = "<group>"; };
-		6E9A4FEC1821CF9800FBABA1 /* actionMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = actionMovie.h; sourceTree = "<group>"; };
-		6E9A4FED1821CF9800FBABA1 /* actionMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = actionMovie.m; sourceTree = "<group>"; };
-		6E9A4FEF1821CFAA00FBABA1 /* romanceMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = romanceMovie.h; sourceTree = "<group>"; };
-		6E9A4FF01821CFAA00FBABA1 /* romanceMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = romanceMovie.m; sourceTree = "<group>"; };
+		6E9A4FF21822E04D00FBABA1 /* avatarMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avatarMovie.h; sourceTree = "<group>"; };
+		6E9A4FF31822E04D00FBABA1 /* avatarMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = avatarMovie.m; sourceTree = "<group>"; };
+		6E9A4FF51822E17400FBABA1 /* titanicMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = titanicMovie.h; sourceTree = "<group>"; };
+		6E9A4FF61822E17400FBABA1 /* titanicMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = titanicMovie.m; sourceTree = "<group>"; };
+		6E9A4FF81822E18700FBABA1 /* tangledMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tangledMovie.h; sourceTree = "<group>"; };
+		6E9A4FF91822E18700FBABA1 /* tangledMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tangledMovie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,12 +145,12 @@
 				6E9A4FDE1821CDFA00FBABA1 /* movieFactory.m */,
 				6E9A4FE31821CEEE00FBABA1 /* baseMovie.h */,
 				6E9A4FE41821CEEE00FBABA1 /* baseMovie.m */,
-				6E9A4FEF1821CFAA00FBABA1 /* romanceMovie.h */,
-				6E9A4FF01821CFAA00FBABA1 /* romanceMovie.m */,
-				6E9A4FEC1821CF9800FBABA1 /* actionMovie.h */,
-				6E9A4FED1821CF9800FBABA1 /* actionMovie.m */,
-				6E9A4FE91821CF8800FBABA1 /* comedyMovie.h */,
-				6E9A4FEA1821CF8800FBABA1 /* comedyMovie.m */,
+				6E9A4FF81822E18700FBABA1 /* tangledMovie.h */,
+				6E9A4FF91822E18700FBABA1 /* tangledMovie.m */,
+				6E9A4FF51822E17400FBABA1 /* titanicMovie.h */,
+				6E9A4FF61822E17400FBABA1 /* titanicMovie.m */,
+				6E9A4FF21822E04D00FBABA1 /* avatarMovie.h */,
+				6E9A4FF31822E04D00FBABA1 /* avatarMovie.m */,
 			);
 			path = Project1;
 			sourceTree = "<group>";
@@ -304,9 +304,9 @@
 				6E9A4FBF1821CDD100FBABA1 /* ViewController.m in Sources */,
 				6E9A4FDF1821CDFA00FBABA1 /* movieFactory.m in Sources */,
 				6E9A4FE51821CEEE00FBABA1 /* baseMovie.m in Sources */,
-				6E9A4FEB1821CF8800FBABA1 /* comedyMovie.m in Sources */,
-				6E9A4FEE1821CF9800FBABA1 /* actionMovie.m in Sources */,
-				6E9A4FF11821CFAA00FBABA1 /* romanceMovie.m in Sources */,
+				6E9A4FF41822E04D00FBABA1 /* avatarMovie.m in Sources */,
+				6E9A4FF71822E17400FBABA1 /* titanicMovie.m in Sources */,
+				6E9A4FFA1822E18700FBABA1 /* tangledMovie.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

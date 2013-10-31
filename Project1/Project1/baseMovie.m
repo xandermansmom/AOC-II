@@ -12,9 +12,9 @@
 
 
 //create get and set methods for each property
-@synthesize movieMinutes, movieCost, director, actors;
+@synthesize movieMinutes, productionCost, marketingCost, director, actors,movieMinutesConv;
 
-//initialize the base movie, creating the instance and setting movie minutes to zero
+//initialize the base movie, creating the instance and setting movie minutes and movie cost to zero
 
 -(id)init
 {
@@ -22,7 +22,8 @@
     if (self !=nil)
     {
         [self setMovieMinutes:0];
-        [self setMovieCost:0];
+        [self setProductionCost:0];
+        [self setMarketingCost: 0];
         [self setDirector:nil];
         [self setActors:nil];
     }
@@ -31,13 +32,12 @@
 
 //calculation/manipulation method to figure cost per minute of making the movie
 
--(void)calculateMovieCostPerMinute;
-{
+-(void)calculateProductionCostPerMinute;
+{    
+    movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
+    
     //statement written to log with current value
-    
-    _movieMinutesConv = movieCost/(float)movieMinutes;
-    
-    NSLog(@"This movie cost %.2f per minute to make", movieCost);
+    NSLog(@"This movie cost %9.2f per minute to make", movieMinutesConv);
 }
 
 @end
