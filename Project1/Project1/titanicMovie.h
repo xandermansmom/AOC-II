@@ -11,7 +11,6 @@
 @interface titanicMovie : baseMovie
 
 //declaring getter and setter method
-
 @property float movie3DConversionCost;
 
 @end

@@ -11,7 +11,6 @@
 @interface saharaMovie : baseMovie
 
 //declaring setter and getter methods 
-
 @property float bribesCost, rewritesCost, bookRightsCost, TVRightsCost;
 
 @end

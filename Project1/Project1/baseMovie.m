@@ -34,7 +34,8 @@
 //calculation/manipulation method to figure cost per minute of making the movie
 
 -(void)calculateProductionCostPerMinute;
-{    
+{
+    //add marketing cost to production cost and divide by minutes of the movie which has been cast from an int to a float
     movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
     
     //statement written to log with current value

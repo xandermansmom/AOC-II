@@ -32,9 +32,11 @@
 
 -(void)calculateProductionCostPerMinute;
 {
+    
+    //Add cushion cost to total production costs
     [self setProductionCost:(productionCost + productionCushionCost)];
     
-    
+    //Add marketing cost to new production cost total and divide by movie minutes which is cast from an int to a float
     movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
     
     //statement written to log showing cost per minute of making Avatar

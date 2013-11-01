@@ -35,9 +35,10 @@
 
 -(void)calculateProductionCostPerMinute;
 {
+    //add cost of bribes, rewrites, book rights and tv rights to the cost of production
     [self setProductionCost:(productionCost + bribesCost + rewritesCost + bookRightsCost + TVRightsCost)];
     
-    
+    //take new production cost, add to marketing cost and divide by minutes of the movie which has been cast from an int to a float
     movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
     
     //statement written to log showing cost per minute of making Sahara
