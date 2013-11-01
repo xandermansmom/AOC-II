@@ -14,6 +14,7 @@
 //create get and set methods for each property
 @synthesize movieMinutes, productionCost, marketingCost, director, actors,movieMinutesConv;
 
+
 //initialize the base movie, creating the instance and setting movie minutes and movie cost to zero
 
 -(id)init

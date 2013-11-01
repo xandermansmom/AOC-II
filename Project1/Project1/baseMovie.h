@@ -30,14 +30,8 @@ typedef enum {
 @property NSString *director;
 @property NSArray *actors;
 
-//initialize
-
--(id)init;
-
 //calculation/manipulation method to figure cost per minute of making the movie
 
 -(void)calculateProductionCostPerMinute;
-
-
 
 @end

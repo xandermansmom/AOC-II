@@ -10,6 +10,7 @@
 
 @interface avatarMovie : baseMovie
 
+//declaring getter and setter methods
 @property float productionCushionCost;
 
 @end

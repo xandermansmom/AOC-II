@@ -12,6 +12,7 @@
 
 @synthesize productionCost, productionCushionCost, marketingCost, movieMinutesConv, movieMinutes;
 
+
 //customizing init to include unique data members
 
 -(id)init
@@ -27,7 +28,7 @@
     return self;
 };
 
-//overriding production cost to factor in unique data member
+//overriding production cost to factor in production cushion costs
 
 -(void)calculateProductionCostPerMinute;
 {
@@ -36,8 +37,8 @@
     
     movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
     
-    //statement written to log with current value
-    NSLog(@"This movie cost %9.2f per minute to make", movieMinutesConv);
+    //statement written to log showing cost per minute of making Avatar
+    NSLog(@"Avatar cost $%9.2f per minute to make", movieMinutesConv);
 }
 
 

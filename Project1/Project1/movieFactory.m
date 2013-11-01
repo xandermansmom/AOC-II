@@ -13,6 +13,8 @@
 +(baseMovie *)createMovie: (int)movieType;
 {
     return [[avatarMovie alloc] init];
+    return [[titanicMovie alloc]init];
+    return [[saharaMovie alloc] init];
 }
 
 @end
