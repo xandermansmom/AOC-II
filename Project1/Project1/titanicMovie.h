@@ -10,7 +10,7 @@
 
 @interface titanicMovie : baseMovie
 
-//declaring getter and setter method
+//data member for manipulating production cost data
 @property float movie3DConversionCost;
 
 @end

@@ -8,9 +8,12 @@
 
 #import "baseMovie.h"
 
+
 @interface saharaMovie : baseMovie
 
-//declaring setter and getter methods 
+//data members for manipulating production cost data
 @property float bribesCost, rewritesCost, bookRightsCost, TVRightsCost;
+@property NSString *director;
+@property NSArray *saharaActorNames;
 
 @end

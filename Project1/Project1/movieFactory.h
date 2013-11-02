@@ -15,6 +15,7 @@
 
 @interface movieFactory : NSObject
 
-+(baseMovie *)createMovie: (int)movieType;
++(baseMovie *)createMovie:(int)movieType;
 
+    //create movie data based on movie type
 @end

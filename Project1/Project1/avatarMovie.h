@@ -10,7 +10,7 @@
 
 @interface avatarMovie : baseMovie
 
-//declaring getter and setter methods
+//data member for manipulating production cost data
 @property float productionCushionCost;
 
 @end

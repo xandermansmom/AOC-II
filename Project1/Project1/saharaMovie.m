@@ -10,8 +10,7 @@
 
 @implementation saharaMovie
 
-@synthesize productionCost, bribesCost,rewritesCost,bookRightsCost,TVRightsCost, marketingCost, movieMinutesConv, movieMinutes;
-
+@synthesize productionCost, bribesCost,rewritesCost,bookRightsCost,TVRightsCost, marketingCost, director, actors, movieMinutesConv, movieMinutes;
 
 //customizing init to include unique data members
 
@@ -27,6 +26,8 @@
         [self setTVRightsCost:10000000];
         [self setMarketingCost:35700000];
         [self setMovieMinutes:123];
+        [self setDirector:@"Breck Eisner"];
+        [self setActors:@[@"Matthew McConaughey,Penelope Cruz, Steve Zahn, William H. Macy, Lambert Wilson, Rainn Wilson"]];
     }
     return self;
 };
@@ -41,8 +42,8 @@
     //take new production cost, add to marketing cost and divide by minutes of the movie which has been cast from an int to a float
     movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
     
-    //statement written to log showing cost per minute of making Sahara
-    NSLog(@"Sahara cost $%9.2f per minute to make", movieMinutesConv);
+    //statement written to log showing Director and actor names as well as the cost per minute to make the movie Sahara
+    NSLog(@"Sahara was directed by %@. The actors in the movie were %@ and it   cost $%9.2f per minute to make.", director, actors, movieMinutesConv);
 }
 
 

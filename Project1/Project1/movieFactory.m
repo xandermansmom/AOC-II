@@ -11,10 +11,18 @@
 @implementation movieFactory
 
 +(baseMovie *)createMovie: (int)movieType;
-{
-    return [[avatarMovie alloc] init];
-    return [[titanicMovie alloc]init];
-    return [[saharaMovie alloc] init];
-}
 
+    {
+        if (movieType == SAHARA) {
+            return [[saharaMovie alloc] init];
+        } else if (movieType == TITANIC) {
+            return [[titanicMovie alloc] init];
+        } else if (movieType == AVATAR) {
+            return [[avatarMovie alloc] init];
+        } else {
+            return nil;
+        }
+    }
+  
+   
 @end
