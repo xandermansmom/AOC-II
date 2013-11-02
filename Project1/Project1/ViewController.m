@@ -103,7 +103,7 @@
     [titanic setMovieMinutes:194];
     [titanic setActors:titanicActorMutableString];
     
-    
+      
     // Create Avatar Movie Data and List
     avatarMovie *avatar = (avatarMovie*)[movieFactory createMovie:AVATAR];
     
@@ -193,7 +193,7 @@
     }
     
     //Create label for Titanic
-    titanicLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 330.0f, 80.0f, 50.0f)];
+    titanicLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 320.0f, 80.0f, 50.0f)];
     if (titanicLabel != nil)
     {
         titanicLabel.text = @"Titanic";
@@ -203,17 +203,18 @@
     }
     
     //Create label for Titanic text
-    titanicLabelOriginal= [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 370.0f, 600.0f, 50.0f)];
+    titanicLabelOriginal= [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 370.0f, 560.0f, 80.0f)];
     if (titanicLabelOriginal != nil)
     {
         titanicLabelOriginal.text = [NSString stringWithFormat:@"Titanic was directed by %@. The actors in the movie were %@ and it cost $%9.2f to make not counting marketing and additional costs.", titanic.director, titanic.actors, titanic.productionCost];
-        saharaLabelOriginal.numberOfLines = 10;
+        titanicLabelOriginal.numberOfLines = 10;
         [self.view addSubview: titanicLabelOriginal];
     }
     
+    
     //Create label for Titanic Converted Data
     self.view.backgroundColor = [UIColor whiteColor];
-    UILabel *titanicConvertedLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 440.0f, 310.0f, 20.0f)];
+    UILabel *titanicConvertedLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 480.0f, 310.0f, 20.0f)];
     if (titanicConvertedLabel != nil)
     {
         titanicConvertedLabel.text = @"Titanic Converted Data";
@@ -224,7 +225,7 @@
     
        
     //Create label for Titanic converted text
-    titanicLabelConvertedData=[[UILabel alloc] initWithFrame:CGRectMake(50.0f, 470.0f, 600.0f, 50.0f)];
+    titanicLabelConvertedData=[[UILabel alloc] initWithFrame:CGRectMake(50.0f, 510.0f, 600.0f, 50.0f)];
     if (titanicLabelConvertedData != nil)
     {
         titanicLabelConvertedData.text = [NSString stringWithFormat:@"Titanic cost $%9.2f per minute to make after adding marketing and 3D conversion costs.", titanic.movieMinutesConv];
@@ -233,7 +234,7 @@
     }
     
     //Create label for Avatar
-    avatarLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 540.0f, 80.0f, 30.0f)];
+    avatarLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 580.0f, 80.0f, 30.0f)];
     if (avatarLabel != nil)
     {
         avatarLabel.text = @"Avatar";
@@ -243,7 +244,7 @@
     }
     
     //Create label for Avatar text
-    avatarLabelOriginal= [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 580.0f, 600.0f, 75.0f)];
+    avatarLabelOriginal= [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 620.0f, 600.0f, 75.0f)];
     if (avatarLabelOriginal != nil)
     {
         avatarLabelOriginal.text = [NSString stringWithFormat:@"Avatar was directed by %@. The actors in the movie were %@ and it cost $%9.2f to make not counting marketing and additional costs.", avatar.director, avatar.actors, avatar.productionCost];
@@ -252,7 +253,7 @@
     }
     //Create label for Avatar Converted Data
     self.view.backgroundColor = [UIColor whiteColor];
-    UILabel *avatarConvertedLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 675.0f, 310.0f, 15.0f)];
+    UILabel *avatarConvertedLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 720.0f, 310.0f, 15.0f)];
     if (avatarConvertedLabel != nil)
     {
         avatarConvertedLabel.text = @"Avatar Converted Data";
@@ -262,11 +263,11 @@
     }
     
     //Create label for Avatar converted text
-    avatarLabelConvertedData=[[UILabel alloc] initWithFrame:CGRectMake(50.0f, 700.0f, 600.0f, 30.0f)];
+    avatarLabelConvertedData=[[UILabel alloc] initWithFrame:CGRectMake(50.0f, 745.0f, 600.0f, 80.0f)];
     if (avatarLabelConvertedData != nil)
     {
         avatarLabelConvertedData.text = [NSString stringWithFormat:@"Avatar cost $%9.2f per minute to make after adding marketing and production cushion costs.", avatar.movieMinutesConv];
-        titanicLabelConvertedData.numberOfLines = 10;
+        avatarLabelConvertedData.numberOfLines = 10;
         [self.view addSubview: avatarLabelConvertedData];
     }
   
