@@ -16,7 +16,7 @@
 
 //overriding production cost to factor in unique data member(3D Conversion cost)
 
--(void)calculateProductionCostPerMinute;
+-(float)calculateProductionCostPerMinute;
 {
     //add cost of converting the movie to 3D to the cost of production
     [self setProductionCost:(productionCost + movie3DConversionCost )];
@@ -26,6 +26,8 @@
     
     //statement written to log showing cost per minute of making Titanic
     NSLog(@"Titanic cost $%9.2f per minute to make", movieMinutesConv);
+    
+    return movieMinutesConv;
 }
 
 

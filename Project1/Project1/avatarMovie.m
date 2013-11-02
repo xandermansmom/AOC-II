@@ -15,7 +15,7 @@
 
 //overriding production cost to factor in production cushion costs
 
--(void)calculateProductionCostPerMinute;
+-(float)calculateProductionCostPerMinute;
 {
     
     //Add cushion cost to total production costs
@@ -26,6 +26,8 @@
     
     //statement written to log showing cost per minute of making Avatar
     NSLog(@"Avatar cost $%9.2f per minute to make", movieMinutesConv);
+    
+    return movieMinutesConv;
 }
 
 

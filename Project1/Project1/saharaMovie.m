@@ -15,7 +15,7 @@
 
 //overriding production cost to factor in unique data members (cost of bribes, script rewrites, book rights and tv rights)
 
--(void)calculateProductionCostPerMinute;
+-(float)calculateProductionCostPerMinute;
 
 {
     //add cost of bribes, rewrites, book rights and tv rights to the cost of production
@@ -25,7 +25,9 @@
     movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
     
     //statement written to log showing Director and actor names as well as the cost per minute to make the movie Sahara
-    NSLog(@"Sahara was directed by %@. The actors in the movie were %@ and it   cost $%9.2f per minute to make.", director, actors, movieMinutesConv);
+    NSLog(@"Sahara was directed by %@. The actors in the movie were %@ and it cost $%9.2f per minute to make.", director, actors, movieMinutesConv);
+    
+    return movieMinutesConv;
 }
 
 

@@ -32,7 +32,6 @@
     NSString * lambert = @"Lambert Wilson";
     NSString * rainn = @"Rainn Wilson";
     
-    
     //Add NSStrings to actorsArray
     NSArray * actorsArray = [NSArray arrayWithObjects:matthew, penelope, steve, william, lambert, rainn, nil];
         
@@ -63,7 +62,6 @@
     [sahara setMarketingCost:35700000];
     [sahara setMovieMinutes:123];
     [sahara setActors:saharaActorMutableString];
-    
     
     // Create Titanic Movie Data and List
     titanicMovie *titanic = (titanicMovie*)[movieFactory createMovie:TITANIC];
@@ -102,7 +100,6 @@
     [titanic setMarketingCost:20000000];
     [titanic setMovieMinutes:194];
     [titanic setActors:titanicActorMutableString];
-    
       
     // Create Avatar Movie Data and List
     avatarMovie *avatar = (avatarMovie*)[movieFactory createMovie:AVATAR];
@@ -149,6 +146,7 @@
         titleLabel.text = @"Movies";
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [titleLabel setFont:[UIFont boldSystemFontOfSize:26]];
+        
         [self.view addSubview:titleLabel];
     }
     
@@ -159,14 +157,23 @@
         saharaLabel.text = @"Sahara";
         saharaLabel.textColor =[UIColor  blueColor];
         [saharaLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        
         [self.view addSubview:saharaLabel];
     }
+    
+    int productionCost = sahara.productionCost;
+    
+    //format string to add commas to numerical output 
+    NSString *displayProductionCost = [NSNumberFormatter localizedStringFromNumber:@(productionCost) numberStyle:NSNumberFormatterCurrencyStyle];
+    
     //Create label for Sahara text
     saharaLabelOriginal= [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 110.0f, 600.0f, 80.0f)];
     if (saharaLabelOriginal != nil)
     {
-        saharaLabelOriginal.text = [NSString stringWithFormat:@"Sahara was directed by %@. The actors in the movie were %@ and it cost $%9.2f to make not counting marketing and additional costs.", sahara.director, sahara.actors, sahara.productionCost];
+        saharaLabelOriginal.text = [NSString stringWithFormat:@"Sahara was directed by %@. The actors in the movie were %@ and it cost %9@ to make not counting marketing and additional costs.", sahara.director, sahara.actors, displayProductionCost];
+        
         saharaLabelOriginal.numberOfLines = 10;
+        
         [self.view addSubview: saharaLabelOriginal];
     }
 
@@ -179,18 +186,29 @@
         saharaConvertedLabel.text = @"Sahara Converted Data";
         saharaConvertedLabel.textColor =[UIColor  redColor];
         [saharaConvertedLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        
         [self.view addSubview:saharaConvertedLabel];
     }
     
-      
     //Create label for Sahara converted text
     saharaLabelConvertedData=[[UILabel alloc] initWithFrame:CGRectMake(50.0f, 260.0f, 600.0f, 50.0f)];
     if (saharaLabelConvertedData != nil)
     {
-        saharaLabelConvertedData.text = [NSString stringWithFormat:@"Sahara cost $%9.2f per minute to make after adding marketing, bribes,rewrites, book rights and tv rights .", sahara.movieMinutesConv];
+        float saharaCostPerMinute = [sahara calculateProductionCostPerMinute] ;
+        
+        NSString *displaySaharaCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(saharaCostPerMinute) numberStyle:NSNumberFormatterCurrencyStyle];
+        
+        saharaLabelConvertedData.text = [NSString stringWithFormat:@"Sahara cost %9@ per minute to make after adding marketing, bribes, rewrites, book rights and tv rights .", displaySaharaCostPerMinute];
+        
         saharaLabelConvertedData.numberOfLines = 10;
+        
         [self.view addSubview: saharaLabelConvertedData];
     }
+    
+    int titProductionCost = titanic.productionCost;
+    
+    //Format string to add commas in numerical output
+    NSString *displayTitanicProductionCost = [NSNumberFormatter localizedStringFromNumber:@(titProductionCost) numberStyle:NSNumberFormatterCurrencyStyle];
     
     //Create label for Titanic
     titanicLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 320.0f, 80.0f, 50.0f)];
@@ -199,6 +217,7 @@
         titanicLabel.text = @"Titanic";
         titanicLabel.textColor =[UIColor  blueColor];
         [titanicLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        
         [self.view addSubview:titanicLabel];
     }
     
@@ -206,11 +225,12 @@
     titanicLabelOriginal= [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 370.0f, 560.0f, 80.0f)];
     if (titanicLabelOriginal != nil)
     {
-        titanicLabelOriginal.text = [NSString stringWithFormat:@"Titanic was directed by %@. The actors in the movie were %@ and it cost $%9.2f to make not counting marketing and additional costs.", titanic.director, titanic.actors, titanic.productionCost];
+        titanicLabelOriginal.text = [NSString stringWithFormat:@"Titanic was directed by %@. The actors in the movie were %@ and it cost %9@ to make not counting marketing and additional costs.", titanic.director, titanic.actors, displayTitanicProductionCost];
+        
         titanicLabelOriginal.numberOfLines = 10;
+        
         [self.view addSubview: titanicLabelOriginal];
     }
-    
     
     //Create label for Titanic Converted Data
     self.view.backgroundColor = [UIColor whiteColor];
@@ -220,18 +240,29 @@
         titanicConvertedLabel.text = @"Titanic Converted Data";
         titanicConvertedLabel.textColor =[UIColor  redColor];
         [titanicConvertedLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        
         [self.view addSubview:titanicConvertedLabel];
     }
     
-       
     //Create label for Titanic converted text
     titanicLabelConvertedData=[[UILabel alloc] initWithFrame:CGRectMake(50.0f, 510.0f, 600.0f, 50.0f)];
     if (titanicLabelConvertedData != nil)
     {
-        titanicLabelConvertedData.text = [NSString stringWithFormat:@"Titanic cost $%9.2f per minute to make after adding marketing and 3D conversion costs.", titanic.movieMinutesConv];
+        float titanicCostPerMinute = [titanic calculateProductionCostPerMinute];
+        
+        NSString *displayTitanicCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(titanicCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
+        
+        titanicLabelConvertedData.text = [NSString stringWithFormat:@"Titanic cost %9@ per minute to make after adding marketing and 3D conversion costs.", displayTitanicCostPerMinute];
+        
         titanicLabelConvertedData.numberOfLines = 10;
+        
         [self.view addSubview: titanicLabelConvertedData];
     }
+    
+    int avatarProductionCost = avatar.productionCost;
+    
+    //Format string to add commas in numerical output
+    NSString *displayAvatarProductionCost = [NSNumberFormatter localizedStringFromNumber:@(avatarProductionCost) numberStyle:NSNumberFormatterCurrencyStyle];
     
     //Create label for Avatar
     avatarLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 580.0f, 80.0f, 30.0f)];
@@ -240,6 +271,7 @@
         avatarLabel.text = @"Avatar";
         avatarLabel.textColor =[UIColor  blueColor];
         [avatarLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        
         [self.view addSubview:avatarLabel];
     }
     
@@ -247,10 +279,13 @@
     avatarLabelOriginal= [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 620.0f, 600.0f, 75.0f)];
     if (avatarLabelOriginal != nil)
     {
-        avatarLabelOriginal.text = [NSString stringWithFormat:@"Avatar was directed by %@. The actors in the movie were %@ and it cost $%9.2f to make not counting marketing and additional costs.", avatar.director, avatar.actors, avatar.productionCost];
+        avatarLabelOriginal.text = [NSString stringWithFormat:@"Avatar was directed by %@. The actors in the movie were %@ and it cost %9@ to make not counting marketing and additional costs.", avatar.director, avatar.actors, displayAvatarProductionCost];
+       
         avatarLabelOriginal.numberOfLines = 10;
+        
         [self.view addSubview: avatarLabelOriginal];
     }
+    
     //Create label for Avatar Converted Data
     self.view.backgroundColor = [UIColor whiteColor];
     UILabel *avatarConvertedLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0f, 720.0f, 310.0f, 15.0f)];
@@ -259,6 +294,7 @@
         avatarConvertedLabel.text = @"Avatar Converted Data";
         avatarConvertedLabel.textColor =[UIColor  redColor];
         [avatarConvertedLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        
         [self.view addSubview:avatarConvertedLabel];
     }
     
@@ -266,10 +302,17 @@
     avatarLabelConvertedData=[[UILabel alloc] initWithFrame:CGRectMake(50.0f, 745.0f, 600.0f, 80.0f)];
     if (avatarLabelConvertedData != nil)
     {
-        avatarLabelConvertedData.text = [NSString stringWithFormat:@"Avatar cost $%9.2f per minute to make after adding marketing and production cushion costs.", avatar.movieMinutesConv];
+        float avatarCostPerMinute = [avatar calculateProductionCostPerMinute];
+        
+        NSString *displayAvatarCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(avatarCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
+		
+        avatarLabelConvertedData.text = [NSString stringWithFormat:@"Avatar cost %9@ per minute to make after adding marketing and production cushion costs.", displayAvatarCostPerMinute];
+        
         avatarLabelConvertedData.numberOfLines = 10;
+        
         [self.view addSubview: avatarLabelConvertedData];
     }
+    
   
     
     [super viewDidLoad];
