@@ -13,21 +13,6 @@
 @synthesize productionCost, productionCushionCost, marketingCost, movieMinutesConv, movieMinutes;
 
 
-//customizing init to include unique data members
-
--(id)init
-{
-    self=[super init];
-    if (self != nil)
-    {
-        [self setProductionCost:300000000];
-        [self setProductionCushionCost:50000000];
-        [self setMarketingCost:150000000];
-        [self setMovieMinutes:162];
-    }
-    return self;
-};
-
 //overriding production cost to factor in production cushion costs
 
 -(void)calculateProductionCostPerMinute;

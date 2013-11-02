@@ -13,20 +13,6 @@
 @synthesize productionCost, movie3DConversionCost, marketingCost, movieMinutes, movieMinutesConv;
 
 
-//customizing init to include unique data member 
-
--(id)init
-{
-    self=[super init];
-    if (self != nil)
-    {
-        [self setProductionCost:200000000];
-        [self setMovie3DConversionCost:18000000];
-        [self setMarketingCost:20000000];
-        [self setMovieMinutes:194];
-    }
-    return self;
-};
 
 //overriding production cost to factor in unique data member(3D Conversion cost)
 

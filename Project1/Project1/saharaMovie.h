@@ -11,6 +11,7 @@
 
 @interface saharaMovie : baseMovie
 
+
 //data members for manipulating production cost data
 @property float bribesCost, rewritesCost, bookRightsCost, TVRightsCost;
 @property NSString *director;
