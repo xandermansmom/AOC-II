@@ -12,7 +12,7 @@
 
 
 //create get and set methods for each property
-@synthesize movieMinutes, productionCost, marketingCost, director, actors,movieMinutesConv;
+@synthesize movieMinutes, productionCost, marketingCost, movieMinutesConv;
 
 
 //initialize the base movie, creating the instance and setting movie minutes and movie cost to zero
@@ -25,8 +25,6 @@
         [self setMovieMinutes:0];
         [self setProductionCost:0];
         [self setMarketingCost: 0];
-        [self setDirector:nil];
-        [self setActors:nil];
     }
     return self;
 }
@@ -37,9 +35,6 @@
 {
     //add marketing cost to production cost and divide by minutes of the movie which has been cast from an int to a float
     movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
-    
-    //statement written to log with current value
-    NSLog(@"This movie cost %9.2f per minute to make", movieMinutesConv);
     
     return movieMinutesConv;
     

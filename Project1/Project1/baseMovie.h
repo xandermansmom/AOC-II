@@ -27,8 +27,7 @@ typedef enum {
 @property float productionCost;
 @property float marketingCost;
 @property float movieMinutesConv;
-@property NSString *director;
-@property NSMutableString *actors;
+
 
 //calculation/manipulation method to figure cost per minute of making the movie
 

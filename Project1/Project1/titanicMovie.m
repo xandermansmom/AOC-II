@@ -24,9 +24,6 @@
     //take new production total, add to marketing cost and divide by minutes of the movie which is cast from an int to a float
     movieMinutesConv = (productionCost + marketingCost)/(float)movieMinutes;
     
-    //statement written to log showing cost per minute of making Titanic
-    NSLog(@"Titanic cost $%9.2f per minute to make", movieMinutesConv);
-    
     return movieMinutesConv;
 }
 
