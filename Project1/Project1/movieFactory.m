@@ -8,7 +8,11 @@
 
 #import "movieFactory.h"
 
+@end
+
+
 @implementation movieFactory
+
 
 +(baseMovie *)createMovie: (int)movieType;
 
@@ -23,6 +27,5 @@
             return nil;
         }
     }
-  
-   
+
 @end

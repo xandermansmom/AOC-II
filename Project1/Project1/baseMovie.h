@@ -21,8 +21,7 @@ typedef enum {
 } movieEnum;
 
 
-//data members for minutes of the movie, movie gross, director and array of actors
-
+//data members for minutes of the movie and movie gross 
 @property int movieMinutes;
 @property float productionCost;
 @property float marketingCost;

@@ -10,6 +10,7 @@
 #import "movieFactory.h"
 #import "baseMovie.h"
 
+@end
 @interface ViewController : UIViewController
 
 {

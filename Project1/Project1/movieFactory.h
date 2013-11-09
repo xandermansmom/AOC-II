@@ -18,4 +18,4 @@
 +(baseMovie *)createMovie:(int)movieType;
 
     //create movie data based on movie type
-@end
+
