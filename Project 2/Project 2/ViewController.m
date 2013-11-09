@@ -22,38 +22,7 @@
 - (void)viewDidLoad
 {
     
-    // Create Sahara Movie Data and List
-    saharaMovie *sahara = (saharaMovie*)[movieFactory createMovie:SAHARA];
-    
-    //set variables for Sahara
-    [sahara setProductionCost:145000000];
-    [sahara setBribesCost:237386];
-    [sahara setRewritesCost:4000000];
-    [sahara setBookRightsCost:10000000];
-    [sahara setTVRightsCost:10000000];
-    [sahara setMarketingCost:35700000];
-    [sahara setMovieMinutes:123];
-    
-    
-    // Create Titanic Movie Data and List
-    titanicMovie *titanic = (titanicMovie*)[movieFactory createMovie:TITANIC];
-    
-    //set variables for Titanic
-    
-    [titanic setProductionCost:200000000];
-    [titanic setMovie3DConversionCost:18000000];
-    [titanic setMarketingCost:20000000];
-    [titanic setMovieMinutes:194];
-    
-    // Create Avatar Movie Data and List
-    avatarMovie *avatar = (avatarMovie*)[movieFactory createMovie:AVATAR];
-    
-    //set variables for avatar
-    [avatar setProductionCost:300000000];
-    [avatar setProductionCushionCost:50000000];
-    [avatar setMarketingCost:150000000];
-    [avatar setMovieMinutes:162];
-    
+        
     [super viewDidLoad];
     
     
@@ -123,13 +92,16 @@
 -(IBAction)buttonHandler:(id)sender {
     if ([sender tag] == 0) {
         textField.text =@"Sahara";
+        [saharaButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     }
     else if ([sender tag] == 1) {
         textField.text = @"Titanic";
+        [titanicButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     }
     else if ([sender tag] == 2)
     {
         textField.text = @"Avatar";
+        [avatarButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     }
 }
 
@@ -139,41 +111,71 @@
 {
     //If Sahara button is enabled, take calculation for cost per minute for Sahara
     if ([buttonHandler tag] == 0) {
-        saharaMovie *sahara = (saharaMovie*)[movieFactory createMovie:0];
-        float saharaCostPerMinute = [sahara calculateProductionCostPerMinute] ;        
         
+        saharaMovie *sahara = (saharaMovie*)[movieFactory createMovie:SAHARA];
+        
+        //set variables for Sahara
+        [sahara setProductionCost:145000000];
+        [sahara setBribesCost:237386];
+        [sahara setRewritesCost:4000000];
+        [sahara setBookRightsCost:10000000];
+        [sahara setTVRightsCost:10000000];
+        [sahara setMarketingCost:35700000];
+        [sahara setMovieMinutes:123];
+        
+        float saharaCostPerMinute = [sahara calculateProductionCostPerMinute] ;
+                
         //Format cost per minute in currency style for Sahara
         NSString *displaySaharaCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(saharaCostPerMinute) numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Sahara total in textfield
-        textField.text = [NSString stringWithFormat:@"cost %9@ per minute to make.", displaySaharaCostPerMinute];;
+        textField.text = [NSString stringWithFormat:@"Sahara cost %9@ per minute to make.", displaySaharaCostPerMinute];
     }
+    
     //If Titanic button is enabled, take the calculation for cost per minute for Titanic
     else if ([buttonHandler tag] == 1)
     {
-        titanicMovie *titanic = (titanicMovie*)[movieFactory createMovie:1];
+        // Create Titanic Movie Data and List
+        titanicMovie *titanic = (titanicMovie*)[movieFactory createMovie:TITANIC];
+        
+        //set variables for Titanic
+        
+        [titanic setProductionCost:200000000];
+        [titanic setMovie3DConversionCost:18000000];
+        [titanic setMarketingCost:20000000];
+        [titanic setMovieMinutes:194];
+
         float titanicCostPerMinute = [titanic calculateProductionCostPerMinute];
         
         //Format cost per minute in currency style for Titanic
         NSString *displayTitanicCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(titanicCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Titanic total in textfield
-        textField.text = [NSString stringWithFormat:@"cost %9@ per minute to make .", displayTitanicCostPerMinute];;
+        textField.text = [NSString stringWithFormat:@"Titanic cost %9@ per minute to make .", displayTitanicCostPerMinute];;
     }
     
     //If Avatar button is enabled, take the calculation for cost per minute for Avatar
     else if ([buttonHandler tag] == 2)
     {
-        avatarMovie *avatar = (avatarMovie*)[movieFactory createMovie:2];
+        // Create Avatar Movie Data and List
+        avatarMovie *avatar = (avatarMovie*)[movieFactory createMovie:AVATAR];
+        
+        //set variables for avatar
+        [avatar setProductionCost:300000000];
+        [avatar setProductionCushionCost:50000000];
+        [avatar setMarketingCost:150000000];
+        [avatar setMovieMinutes:162];
+
         float avatarCostPerMinute = [avatar calculateProductionCostPerMinute];
         
         //Format cost per minute in currency style for Avatar
         NSString *displayAvatarCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(avatarCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Avatar total in textfield
-        textField.text = [NSString stringWithFormat:@" cost %9@ per minute to make.", displayAvatarCostPerMinute];
+        textField.text = [NSString stringWithFormat:@"Avatar cost %9@ per minute to make.", displayAvatarCostPerMinute];
         
     }
+    
 }
 
 

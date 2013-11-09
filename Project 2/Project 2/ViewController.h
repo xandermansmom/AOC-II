@@ -24,6 +24,7 @@
     IBOutlet UIButton *avatarButton;
     IBOutlet UITextField *textField;
     IBOutlet UIButton *buttonHandler;
+    NSString *currentValue;
 }
 
 -(IBAction)onChange:(id)sender;
