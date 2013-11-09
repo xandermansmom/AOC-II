@@ -146,7 +146,7 @@
         NSString *displaySaharaCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(saharaCostPerMinute) numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Sahara total in textfield
-        textField.text = [NSString stringWithFormat:@"cost %9@ per minute to make after adding marketing, bribes, rewrites, book rights and tv rights .", displaySaharaCostPerMinute];;
+        textField.text = [NSString stringWithFormat:@"cost %9@ per minute to make.", displaySaharaCostPerMinute];;
     }
     //If Titanic button is enabled, take the calculation for cost per minute for Titanic
     else if ([buttonHandler tag] == 1)
@@ -158,7 +158,7 @@
         NSString *displayTitanicCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(titanicCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Titanic total in textfield
-        textField.text = [NSString stringWithFormat:@"cost %9@ per minute to make after adding marketing and 3D conversion costs.", displayTitanicCostPerMinute];;
+        textField.text = [NSString stringWithFormat:@"cost %9@ per minute to make .", displayTitanicCostPerMinute];;
     }
     
     //If Avatar button is enabled, take the calculation for cost per minute for Avatar
@@ -171,7 +171,7 @@
         NSString *displayAvatarCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(avatarCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Avatar total in textfield
-        textField.text = [NSString stringWithFormat:@" cost %9@ per minute to make after adding marketing and production cushion costs.", displayAvatarCostPerMinute];
+        textField.text = [NSString stringWithFormat:@" cost %9@ per minute to make.", displayAvatarCostPerMinute];
         
     }
 }
