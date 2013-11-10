@@ -77,30 +77,43 @@
 }
 
 //Stepper Control to perform increase or decrease of numerical data for each subclass
--(IBAction)valueChange:(id)sender;
+- (IBAction)stepperValueChanged:(UIStepper *)sender;
 {
-    UIStepper *stepControl = (UIStepper*)
-    sender;
-    if (stepperControl != nil)
+    if ([sender tag] == 0)
     {
-        float currentValue = stepperControl.value;
+        stepperControl = (UIStepper*)sender;
     }
-}
+        if (stepperControl != nil)
+            {
+              int currentValue  = stepperControl.value;
+                currentMinutes.text = [NSString stringWithFormat:@"Minutes: %i ", currentValue];
+                
+            }
+    }
 
 
 //Buttons for subclass actions
 -(IBAction)buttonHandler:(id)sender {
     if ([sender tag] == 0) {
         textField.text =@"Sahara";
+        [saharaButton setEnabled:NO];
+        [titanicButton setEnabled:YES];
+        [avatarButton setEnabled:YES];
         [saharaButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     }
     else if ([sender tag] == 1) {
         textField.text = @"Titanic";
+        [saharaButton setEnabled:YES];
+        [titanicButton setEnabled:NO];
+        [avatarButton setEnabled:YES];
         [titanicButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     }
     else if ([sender tag] == 2)
     {
         textField.text = @"Avatar";
+        [saharaButton setEnabled:YES];
+        [titanicButton setEnabled:YES];
+        [avatarButton setEnabled:NO];
         [avatarButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     }
 }
@@ -110,8 +123,9 @@
 -(IBAction)performCalculation:(UIButton *)sender
 {
     //If Sahara button is enabled, take calculation for cost per minute for Sahara
-    if ([buttonHandler tag] == 0) {
+    if (saharaButton.enabled == NO){
         
+        //Create Sahara Movie Data and List
         saharaMovie *sahara = (saharaMovie*)[movieFactory createMovie:SAHARA];
         
         //set variables for Sahara
@@ -123,18 +137,18 @@
         [sahara setMarketingCost:35700000];
         [sahara setMovieMinutes:123];
         
-        float saharaCostPerMinute = [sahara calculateProductionCostPerMinute] ;
+        float saharaCostPerMinute = [sahara calculateProductionCostPerMinute];
                 
         //Format cost per minute in currency style for Sahara
         NSString *displaySaharaCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(saharaCostPerMinute) numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Sahara total in textfield
-        textField.text = [NSString stringWithFormat:@"Sahara cost %9@ per minute to make.", displaySaharaCostPerMinute];
+        textField.text = [NSString stringWithFormat:@"%@ cost %9@ to make.", textField.text, displaySaharaCostPerMinute];
     }
     
     //If Titanic button is enabled, take the calculation for cost per minute for Titanic
-    else if ([buttonHandler tag] == 1)
-    {
+    else if (titanicButton.enabled == NO)    {
+        
         // Create Titanic Movie Data and List
         titanicMovie *titanic = (titanicMovie*)[movieFactory createMovie:TITANIC];
         
@@ -151,11 +165,11 @@
         NSString *displayTitanicCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(titanicCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Titanic total in textfield
-        textField.text = [NSString stringWithFormat:@"Titanic cost %9@ per minute to make .", displayTitanicCostPerMinute];;
+        textField.text = [NSString stringWithFormat:@"%@ cost %9@ to make.", textField.text, displayTitanicCostPerMinute];;
     }
     
     //If Avatar button is enabled, take the calculation for cost per minute for Avatar
-    else if ([buttonHandler tag] == 2)
+    else if (avatarButton.enabled == NO)
     {
         // Create Avatar Movie Data and List
         avatarMovie *avatar = (avatarMovie*)[movieFactory createMovie:AVATAR];
@@ -172,7 +186,7 @@
         NSString *displayAvatarCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(avatarCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
         
         //Display Avatar total in textfield
-        textField.text = [NSString stringWithFormat:@"Avatar cost %9@ per minute to make.", displayAvatarCostPerMinute];
+        textField.text = [NSString stringWithFormat:@"%@ cost %9@ to make.", textField.text, displayAvatarCostPerMinute];
         
     }
     

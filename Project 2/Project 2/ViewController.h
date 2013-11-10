@@ -19,24 +19,23 @@
     IBOutlet UIImageView *avatarImage;
     IBOutlet UIStepper *stepperControl;
     IBOutlet UILabel *colorLabel;
+    IBOutlet UILabel *currentMinutes;
     IBOutlet UIButton *saharaButton;
     IBOutlet UIButton *titanicButton;
     IBOutlet UIButton *avatarButton;
     IBOutlet UITextField *textField;
     IBOutlet UIButton *buttonHandler;
-    NSString *currentValue;
 }
 
 -(IBAction)onChange:(id)sender;
 
 -(IBAction)onClick:(id)sender;
 
--(IBAction)valueChange:(id)sender;
-
--(IBAction)stepControl:(id)sender;
+- (IBAction)stepperValueChanged:(UIStepper *)sender;
 
 -(IBAction)buttonHandler:(id)sender;
 
 -(IBAction)performCalculation:(UIButton *)sender;
+
 
 @end
