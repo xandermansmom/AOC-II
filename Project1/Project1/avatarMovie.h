@@ -12,5 +12,4 @@
 
 //data member for manipulating production cost data
 @property float productionCushionCost;
-
 @end

@@ -87,10 +87,8 @@
             {
               int currentValue  = stepperControl.value;
                 currentMinutes.text = [NSString stringWithFormat:@"Minutes: %i ", currentValue];
-                
             }
-    }
-
+      }
 
 //Buttons for subclass actions
 -(IBAction)buttonHandler:(id)sender {
@@ -137,14 +135,15 @@
         [sahara setMarketingCost:35700000];
         [sahara setMovieMinutes:123];
         
-        float saharaCostPerMinute = [sahara calculateProductionCostPerMinute];
-                
-        //Format cost per minute in currency style for Sahara
+        float saharaCostPerMinute = [sahara calculateProductionCostPerMinute ];
+        
+         //Format cost per minute in currency style for Sahara
         NSString *displaySaharaCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(saharaCostPerMinute) numberStyle:NSNumberFormatterCurrencyStyle];
         
-        //Display Sahara total in textfield
+    
+         //Display Sahara total in textfield
         textField.text = [NSString stringWithFormat:@"%@ cost %9@ to make.", textField.text, displaySaharaCostPerMinute];
-    }
+        }
     
     //If Titanic button is enabled, take the calculation for cost per minute for Titanic
     else if (titanicButton.enabled == NO)    {
@@ -180,8 +179,8 @@
         [avatar setMarketingCost:150000000];
         [avatar setMovieMinutes:162];
 
-        float avatarCostPerMinute = [avatar calculateProductionCostPerMinute];
-        
+        float avatarCostPerMinute =  [avatar calculateProductionCostPerMinute ];
+                
         //Format cost per minute in currency style for Avatar
         NSString *displayAvatarCostPerMinute = [NSNumberFormatter localizedStringFromNumber:@(avatarCostPerMinute)numberStyle:NSNumberFormatterCurrencyStyle];
         
@@ -191,7 +190,6 @@
     }
     
 }
-
 
 
 
