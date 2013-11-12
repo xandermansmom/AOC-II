@@ -507,6 +507,7 @@
 				6EDCFAC7182BF5140028AB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EDCFAC8182BF5140028AB08 /* Build configuration list for PBXNativeTarget "Project 2Tests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				6EDCFACA182BF5140028AB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
