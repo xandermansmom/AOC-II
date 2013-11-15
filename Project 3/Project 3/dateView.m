@@ -20,7 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        delegate = nil;
     }
     return self;
 }
@@ -98,10 +98,10 @@ UIButton *saveThisButton = (UIButton*)sender;
     }
 }
 
-
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     textField.text = @"";
+    
     return true;
 }
 
@@ -112,15 +112,13 @@ UIButton *saveThisButton = (UIButton*)sender;
     {
         [delegate DidClose:textField.text];
     }
-      [self dismissViewControllerAnimated:true completion:nil];
+    [self dismissViewControllerAnimated:true completion:nil];
     
     return true;
     
-    }
-
--(void)DidClose:(NSString*)nameString
-{
-    
 }
+
+
+
 @end
 
