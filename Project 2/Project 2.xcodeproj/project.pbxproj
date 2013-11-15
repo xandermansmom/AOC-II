@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E1112241835E96800E0CCE8 /* avatarMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1112231835E96800E0CCE8 /* avatarMovie.m */; };
+		6E1112271835E9C800E0CCE8 /* baseMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1112261835E9C800E0CCE8 /* baseMovie.m */; };
+		6E11122A1835E9FF00E0CCE8 /* titanicMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1112291835E9FF00E0CCE8 /* titanicMovie.m */; };
+		6E11122D1835EA1000E0CCE8 /* saharaMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11122C1835EA1000E0CCE8 /* saharaMovie.m */; };
+		6E1112301835EB5100E0CCE8 /* movieFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11122F1835EB5100E0CCE8 /* movieFactory.m */; };
 		6EDCFA91182BF5140028AB08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDCFA90182BF5140028AB08 /* UIKit.framework */; };
 		6EDCFA93182BF5140028AB08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDCFA92182BF5140028AB08 /* Foundation.framework */; };
 		6EDCFA95182BF5140028AB08 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDCFA94182BF5140028AB08 /* CoreGraphics.framework */; };
@@ -28,11 +33,6 @@
 		6EDCFAD0182BFCBC0028AB08 /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCFACD182BFCBC0028AB08 /* avatar.jpg */; };
 		6EDCFAD2182C27080028AB08 /* SecondaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCFAD1182C27070028AB08 /* SecondaryView.xib */; };
 		6EDCFAD5182C2B870028AB08 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCFAD4182C2B870028AB08 /* SecondViewController.m */; };
-		6EDCFADC182D3DD00028AB08 /* titanicMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCFAD6182D3DCF0028AB08 /* titanicMovie.m */; };
-		6EDCFADD182D3DD00028AB08 /* saharaMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCFAD8182D3DCF0028AB08 /* saharaMovie.m */; };
-		6EDCFADE182D3DD00028AB08 /* avatarMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCFADA182D3DCF0028AB08 /* avatarMovie.m */; };
-		6EDCFAE3182D3E230028AB08 /* movieFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCFADF182D3E230028AB08 /* movieFactory.m */; };
-		6EDCFAE4182D3E230028AB08 /* baseMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCFAE1182D3E230028AB08 /* baseMovie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E1112221835E96800E0CCE8 /* avatarMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avatarMovie.h; path = ../avatarMovie.h; sourceTree = "<group>"; };
+		6E1112231835E96800E0CCE8 /* avatarMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = avatarMovie.m; path = ../avatarMovie.m; sourceTree = "<group>"; };
+		6E1112251835E9C800E0CCE8 /* baseMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseMovie.h; sourceTree = "<group>"; };
+		6E1112261835E9C800E0CCE8 /* baseMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseMovie.m; sourceTree = "<group>"; };
+		6E1112281835E9FF00E0CCE8 /* titanicMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = titanicMovie.h; sourceTree = "<group>"; };
+		6E1112291835E9FF00E0CCE8 /* titanicMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = titanicMovie.m; sourceTree = "<group>"; };
+		6E11122B1835EA1000E0CCE8 /* saharaMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saharaMovie.h; sourceTree = "<group>"; };
+		6E11122C1835EA1000E0CCE8 /* saharaMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = saharaMovie.m; sourceTree = "<group>"; };
+		6E11122E1835EB5100E0CCE8 /* movieFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movieFactory.h; sourceTree = "<group>"; };
+		6E11122F1835EB5100E0CCE8 /* movieFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = movieFactory.m; sourceTree = "<group>"; };
 		6EDCFA8D182BF5140028AB08 /* Project 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDCFA90182BF5140028AB08 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6EDCFA92182BF5140028AB08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,16 +84,6 @@
 		6EDCFAD1182C27070028AB08 /* SecondaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondaryView.xib; sourceTree = "<group>"; };
 		6EDCFAD3182C2B870028AB08 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		6EDCFAD4182C2B870028AB08 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		6EDCFAD6182D3DCF0028AB08 /* titanicMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = titanicMovie.m; path = ../../Project1/Project1/titanicMovie.m; sourceTree = "<group>"; };
-		6EDCFAD7182D3DCF0028AB08 /* titanicMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = titanicMovie.h; path = ../../Project1/Project1/titanicMovie.h; sourceTree = "<group>"; };
-		6EDCFAD8182D3DCF0028AB08 /* saharaMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = saharaMovie.m; path = ../../Project1/Project1/saharaMovie.m; sourceTree = "<group>"; };
-		6EDCFAD9182D3DCF0028AB08 /* saharaMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = saharaMovie.h; path = ../../Project1/Project1/saharaMovie.h; sourceTree = "<group>"; };
-		6EDCFADA182D3DCF0028AB08 /* avatarMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = avatarMovie.m; path = ../../Project1/Project1/avatarMovie.m; sourceTree = "<group>"; };
-		6EDCFADB182D3DD00028AB08 /* avatarMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avatarMovie.h; path = ../../Project1/Project1/avatarMovie.h; sourceTree = "<group>"; };
-		6EDCFADF182D3E230028AB08 /* movieFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = movieFactory.m; path = ../../Project1/Project1/movieFactory.m; sourceTree = "<group>"; };
-		6EDCFAE0182D3E230028AB08 /* movieFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = movieFactory.h; path = ../../Project1/Project1/movieFactory.h; sourceTree = "<group>"; };
-		6EDCFAE1182D3E230028AB08 /* baseMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = baseMovie.m; path = ../../Project1/Project1/baseMovie.m; sourceTree = "<group>"; };
-		6EDCFAE2182D3E230028AB08 /* baseMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = baseMovie.h; path = ../../Project1/Project1/baseMovie.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,16 +143,16 @@
 		6EDCFA96182BF5140028AB08 /* Project 2 */ = {
 			isa = PBXGroup;
 			children = (
-				6EDCFADF182D3E230028AB08 /* movieFactory.m */,
-				6EDCFAE0182D3E230028AB08 /* movieFactory.h */,
-				6EDCFAE1182D3E230028AB08 /* baseMovie.m */,
-				6EDCFAE2182D3E230028AB08 /* baseMovie.h */,
-				6EDCFAD6182D3DCF0028AB08 /* titanicMovie.m */,
-				6EDCFAD7182D3DCF0028AB08 /* titanicMovie.h */,
-				6EDCFAD8182D3DCF0028AB08 /* saharaMovie.m */,
-				6EDCFAD9182D3DCF0028AB08 /* saharaMovie.h */,
-				6EDCFADA182D3DCF0028AB08 /* avatarMovie.m */,
-				6EDCFADB182D3DD00028AB08 /* avatarMovie.h */,
+				6E11122E1835EB5100E0CCE8 /* movieFactory.h */,
+				6E11122F1835EB5100E0CCE8 /* movieFactory.m */,
+				6E1112251835E9C800E0CCE8 /* baseMovie.h */,
+				6E1112261835E9C800E0CCE8 /* baseMovie.m */,
+				6E11122B1835EA1000E0CCE8 /* saharaMovie.h */,
+				6E11122C1835EA1000E0CCE8 /* saharaMovie.m */,
+				6E1112221835E96800E0CCE8 /* avatarMovie.h */,
+				6E1112231835E96800E0CCE8 /* avatarMovie.m */,
+				6E1112281835E9FF00E0CCE8 /* titanicMovie.h */,
+				6E1112291835E9FF00E0CCE8 /* titanicMovie.m */,
 				6EDCFACB182BFCBC0028AB08 /* titanic.jpg */,
 				6EDCFACC182BFCBC0028AB08 /* Sahara_poster.jpg */,
 				6EDCFACD182BFCBC0028AB08 /* avatar.jpg */,
@@ -320,11 +320,11 @@
 				6EDCFAA1182BF5140028AB08 /* AppDelegate.m in Sources */,
 				6EDCFAAA182BF5140028AB08 /* ViewController.m in Sources */,
 				6EDCFAD5182C2B870028AB08 /* SecondViewController.m in Sources */,
-				6EDCFADC182D3DD00028AB08 /* titanicMovie.m in Sources */,
-				6EDCFADD182D3DD00028AB08 /* saharaMovie.m in Sources */,
-				6EDCFADE182D3DD00028AB08 /* avatarMovie.m in Sources */,
-				6EDCFAE3182D3E230028AB08 /* movieFactory.m in Sources */,
-				6EDCFAE4182D3E230028AB08 /* baseMovie.m in Sources */,
+				6E1112241835E96800E0CCE8 /* avatarMovie.m in Sources */,
+				6E1112271835E9C800E0CCE8 /* baseMovie.m in Sources */,
+				6E11122A1835E9FF00E0CCE8 /* titanicMovie.m in Sources */,
+				6E11122D1835EA1000E0CCE8 /* saharaMovie.m in Sources */,
+				6E1112301835EB5100E0CCE8 /* movieFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
