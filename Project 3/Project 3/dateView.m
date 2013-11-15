@@ -98,20 +98,29 @@ UIButton *saveThisButton = (UIButton*)sender;
     }
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     textField.text = @"";
+    return true;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (delegate != nil)
+        
     {
         [delegate DidClose:textField.text];
     }
       [self dismissViewControllerAnimated:true completion:nil];
-        return true;
+    
+    return true;
     
     }
 
+-(void)DidClose:(NSString*)nameString
+{
+    
+}
 @end
+

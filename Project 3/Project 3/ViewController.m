@@ -15,11 +15,6 @@
 
 @implementation ViewController
 
--(void)DidClose:(NSString *)nameString
-{
-    dateText.text = nameString;
-}
-
 - (void)viewDidLoad
 {
     //Create a UILabel and place it at the top of the view. This is used as the title Application. Center the text for this label.
@@ -48,8 +43,6 @@
 }
 
 
-
-
 //Open date view page
 -(IBAction)onClick:(id)sender
 {
@@ -60,11 +53,17 @@
         initWithNibName:@"dateView" bundle: nil];
         if(openDateView != nil)
         {
+            openDateView.delegate = self;
             [self presentViewController:openDateView animated: true completion: nil];
+            
         }
         
     }
 }
 
+-(void)DidClose:(NSString *)nameString
+{
+    dateText.text = nameString;
+}
 
 @end

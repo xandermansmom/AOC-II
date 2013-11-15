@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "dateView.h"
 
-@interface ViewController : UIViewController <dateViewDelegate, UITextViewDelegate>
+@interface ViewController : UIViewController
+ <dateViewDelegate, UITextViewDelegate>
 
 {
     UITextView *dateText;

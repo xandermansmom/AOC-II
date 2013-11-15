@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 
 @protocol dateViewDelegate <NSObject>
 
 @required
+
 -(void)DidClose:(NSString*)nameString;
 
 @end
@@ -23,7 +25,7 @@
     NSString *stringValue;
     IBOutlet UITextField *eventText;
     IBOutlet UIDatePicker *datePicker;
-    id<dateViewDelegate>delegate;
+    id<dateViewDelegate> delegate;
 }
 
 -(IBAction)onSave:(id)sender;
@@ -35,5 +37,6 @@
 -(IBAction)datePicker:(id)sender;
 
 @property (strong) id<dateViewDelegate> delegate;
+
 @end
 
