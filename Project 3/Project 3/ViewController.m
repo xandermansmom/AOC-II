@@ -43,17 +43,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+NSString *newEventLabel = @"New Event: ";
+
 
 -(void)didClose:eventData
 {
     
 }
 
+
 //Open date view page
 -(IBAction)onClick:(id)sender
 {
-    UIButton *thisButton = (UIButton*)sender;
-    if (thisButton != nil)
+   dateViewButton = (UIButton*)sender;
+    if (dateViewButton != nil)
     {
         dateView *openDateView = [[dateView alloc]
         initWithNibName:@"dateView" bundle: nil];
@@ -66,7 +69,6 @@
         
     }
 }
-
 
 
 @end

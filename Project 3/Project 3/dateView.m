@@ -86,27 +86,42 @@
         picker.MinimumDate = [NSDate date];
       
     {
-        //format date
+        //initialize dateformatter
         NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
         if (formatDate != nil)
             
          {
+             //set date no earlier than today's date
              date = picker.date;
+             
+             //set date format
              [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
-             NSLog(@"date = %@", [date description]);
+             
+             dateString = [formatDate stringFromDate:date];
+             
+             //return date
+             date = [NSString stringWithFormat:@"The date of the event is %@", dateString];
+             
+             if ([dateString isEqual: @""])
+             {
+                dateString = @"There are currently no events scheduled.";
+             }
+             else
+             {
+                 = date;
+             }
          }
-    }   
+    }
         
     }
 }
-
 //Save date and Event data
 -(IBAction)onSave:(id)sender
 {
     saveThis = (UIButton*)sender;
     if ((stringValue != nil) && (date !=nil))
     {
-      eventData  = [NSMutableString stringWithFormat:@"There is a \"%@\" \n \t on %@ \n \n", stringValue, date];
+        eventData  = [NSMutableString stringWithFormat:@"%@ /n %@ ", stringValue, date];
         
         [delegate didClose:eventData];
     }

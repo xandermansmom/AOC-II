@@ -16,6 +16,8 @@
     UITextView *dateText;
     UILabel *dateLabel;
     UIButton *eventButton;
+    UIButton *dateViewButton;
+    IBOutlet UITextView *textView;
 }
 
 -(IBAction)onClick:(id)sender;

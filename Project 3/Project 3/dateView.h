@@ -16,7 +16,7 @@
 @end
 
 @interface dateView : UIViewController <dateViewDelegate, UITextFieldDelegate, UIPickerViewDelegate>
-{  
+{
     UIButton *saveThis;
     UIButton *closeButton;
     UILabel *eventLabel;
@@ -25,6 +25,7 @@
     NSMutableString *eventData;
     NSDate *date;
     UIDatePicker *picker;
+    NSString *dateString;
     IBOutlet UITextField *eventText;
     IBOutlet UIDatePicker *datePicker;
     NSObject<dateViewDelegate> *delegate;
