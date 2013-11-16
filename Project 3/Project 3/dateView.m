@@ -10,13 +10,18 @@
 
 @interface dateView ()
 
--(void)didClose:eventData;
 
 @end
 
 @implementation dateView
 
+-(void)didClose:eventData
+{
+   
+}
+
 @synthesize delegate;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,7 +62,7 @@
     myText = (UITextField*)sender;
     if(myText != nil)
     {
-        stringValue = [myText text];
+       stringValue = [myText text];
     }
     NSLog(@"%@", stringValue);
 }
@@ -107,8 +112,6 @@
     }
     [self dismissViewControllerAnimated:true completion:nil];
 }
-
-
 
 
 @end

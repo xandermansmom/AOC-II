@@ -44,7 +44,10 @@
 }
 
 
-
+-(void)didClose:eventData
+{
+    
+}
 
 //Open date view page
 -(IBAction)onClick:(id)sender

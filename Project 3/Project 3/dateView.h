@@ -11,7 +11,6 @@
 @protocol dateViewDelegate<NSObject>
 
 @required
-
 -(void)didClose:eventData;
 
 @end
@@ -31,6 +30,8 @@
     NSObject<dateViewDelegate> *delegate;
 }
 
+@property (strong) id<dateViewDelegate> delegate;
+
 -(IBAction)onSave:(id)sender;
 
 -(IBAction)closeKeyboard:(id)sender;
@@ -40,7 +41,6 @@
 -(IBAction)datePicker:(id)sender;
 
 
-@property (strong) id<dateViewDelegate> delegate;
 
 
 @end
