@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 
+
 @end
 
 @implementation ViewController
@@ -43,6 +44,8 @@
 }
 
 
+
+
 //Open date view page
 -(IBAction)onClick:(id)sender
 {
@@ -62,9 +65,5 @@
 }
 
 
--(void)DidClose:(NSString *)nameString
-{
-    dateText.text = nameString;
-}
 
 @end

@@ -10,6 +10,8 @@
 
 @interface dateView ()
 
+-(void)didClose:(NSString *)dateView date: (NSString*)nameString;
+
 @end
 
 @implementation dateView
@@ -40,17 +42,6 @@
 }
 
 
-//Save date and Event data
--(IBAction)onSave:(id)sender
-{
-UIButton *saveThisButton = (UIButton*)sender;
-    if (saveThisButton != nil)
-    {
-        {
-           
-        }    }
-}
-
 //Close Keyboard
 -(IBAction)closeKeyboard:(id)sender
 {
@@ -67,10 +58,17 @@ UIButton *saveThisButton = (UIButton*)sender;
     UITextField *myText = (UITextField*)sender;
     if(myText != nil)
     {
-        stringValue = [myText text]; 
+        stringValue = [myText text];
     }
+    NSLog(@"%@", stringValue);
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.text = @"";
     
-      NSLog(@"%@", stringValue);}
+    return true;
+}
 
 //Date Picker
 -(IBAction)datePicker:(id)sender
@@ -89,8 +87,8 @@ UIButton *saveThisButton = (UIButton*)sender;
         if (formatDate != nil)
             
          {
-            [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
-             NSDate *date = picker.date;
+             date = picker.date;
+             [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
              NSLog(@"date = %@", [date description]);
          }
     }   
@@ -98,25 +96,19 @@ UIButton *saveThisButton = (UIButton*)sender;
     }
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+//Save date and Event data
+-(IBAction)onSave:(id)sender
 {
-    textField.text = @"";
-    
-    return true;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if (delegate != nil)
-        
+    UIButton *saveThis = (UIButton*)sender;
+    if ((stringValue != nil) && (date !=nil))
     {
-        [delegate DidClose:textField.text];
+      eventData  = [NSMutableString stringWithFormat:@"There is a \"%@\" \n \t on %@ \n \n", stringValue, date];
+        
+        [delegate didClose:eventData];
     }
     [self dismissViewControllerAnimated:true completion:nil];
-    
-    return true;
-    
 }
+
 
 
 
