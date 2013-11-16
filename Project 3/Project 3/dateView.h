@@ -21,9 +21,11 @@
     UIButton *saveThis;
     UIButton *closeButton;
     UILabel *eventLabel;
+    UITextField *myText;
     NSString *stringValue;
-    NSString *eventData;
+    NSMutableString *eventData;
     NSDate *date;
+    UIDatePicker *picker;
     IBOutlet UITextField *eventText;
     IBOutlet UIDatePicker *datePicker;
     NSObject<dateViewDelegate> *delegate;

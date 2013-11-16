@@ -16,6 +16,7 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad
 {
     //Create a UILabel and place it at the top of the view. This is used as the title Application. Center the text for this label.
@@ -30,9 +31,8 @@
         dateLabel.backgroundColor = [UIColor colorWithRed:0.855 green:0.616 blue:1 alpha:1];
     }
     
-   
     [self.view addSubview: dateLabel];
-    
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

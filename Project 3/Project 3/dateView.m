@@ -10,7 +10,7 @@
 
 @interface dateView ()
 
--(void)didClose:(NSString *)dateView date: (NSString*)nameString;
+-(void)didClose:eventData;
 
 @end
 
@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -45,8 +44,8 @@
 //Close Keyboard
 -(IBAction)closeKeyboard:(id)sender
 {
-    UIButton *closeThisButton = (UIButton*)sender;
-    if (closeThisButton != nil)
+    closeButton = (UIButton*)sender;
+    if (closeButton != nil)
     {
        [self.view endEditing:YES];
     }
@@ -55,7 +54,7 @@
 //Text Field for Event Data 
 -(IBAction)eventText:(id)sender
 {
-    UITextField *myText = (UITextField*)sender;
+    myText = (UITextField*)sender;
     if(myText != nil)
     {
         stringValue = [myText text];
@@ -74,7 +73,7 @@
 -(IBAction)datePicker:(id)sender
 
 {
-    UIDatePicker *picker = (UIDatePicker*)sender;    
+    picker = (UIDatePicker*)sender;    
     if(picker !=nil)
         
     {
@@ -99,7 +98,7 @@
 //Save date and Event data
 -(IBAction)onSave:(id)sender
 {
-    UIButton *saveThis = (UIButton*)sender;
+    saveThis = (UIButton*)sender;
     if ((stringValue != nil) && (date !=nil))
     {
       eventData  = [NSMutableString stringWithFormat:@"There is a \"%@\" \n \t on %@ \n \n", stringValue, date];
