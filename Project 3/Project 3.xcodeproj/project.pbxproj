@@ -465,6 +465,7 @@
 				6E1111B318344DE500E0CCE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E1111B418344DE500E0CCE8 /* Build configuration list for PBXNativeTarget "Project 3Tests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +474,7 @@
 				6E1111B618344DE500E0CCE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

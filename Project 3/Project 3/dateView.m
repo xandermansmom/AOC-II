@@ -119,15 +119,14 @@
 -(IBAction)onSave:(id)sender
 {
     saveThis = (UIButton*)sender;
-    if ((stringValue != nil)&& (date !=nil))
+    if (!date)
+    { //initialize dateformatter
+        NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
+        if (formatDate != nil)
     {
         eventData  = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
         
-        { //initialize dateformatter
-            NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
-            if (formatDate != nil)
-            {
-                //set date no earlier than today's date
+            //set date no earlier than today's date
                 date = [NSDate date];
                 
                 //set date format
@@ -137,14 +136,19 @@
                 
                 //return date
                 date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
+    }
+        else if
+        
+            ((stringValue != nil)&& (date !=nil))
+            {
+                eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
                 
-                if ([dateString isEqual: @""])
+             }    
+                   else ([dateString isEqual: @""]);
                 {
                     dateString = @"There are currently no events scheduled.";
                 }
-            }
-        }
-        
+                 
         [delegate didClose:eventData];
     }
     
