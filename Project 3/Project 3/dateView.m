@@ -17,7 +17,8 @@
 
 -(void)didClose:eventData
 {
-   
+    NSLog(@"%@", stringValue);
+    NSLog(@"The date of the event is %@", dateString);
 }
 
 @synthesize delegate;
@@ -64,7 +65,6 @@
     {
        stringValue = [myText text];
     }
-    NSLog(@"%@", stringValue);
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
@@ -100,7 +100,7 @@
              dateString = [formatDate stringFromDate:date];
              
              //return date
-             date = [NSString stringWithFormat:@"The date of the event is %@", dateString];
+             date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
              
              if ([dateString isEqual: @""])
              {
@@ -119,12 +119,14 @@
 -(IBAction)onSave:(id)sender
 {
     saveThis = (UIButton*)sender;
-    if ((stringValue != nil) && (date !=nil))
+    if ((stringValue != nil)&& (date !=nil))
     {
-        eventData  = [NSMutableString stringWithFormat:@"%@ /n %@ ", stringValue, date];
+        eventData  = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
         
         [delegate didClose:eventData];
     }
+    
+    NSLog (@"%@", eventData);
     [self dismissViewControllerAnimated:true completion:nil];
 }
 

@@ -11,7 +11,6 @@
 
 @interface ViewController ()
 
-
 @end
 
 @implementation ViewController
@@ -43,16 +42,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-NSString *newEventLabel = @"New Event: ";
 
+    -(void)didClose:eventData
+               date:(NSString*)dateString;
 
--(void)didClose:eventData
-{
+    {
+    //grab data from dateView
+    eventData = [NSString stringWithFormat:@"%@\n%@\n\n\n", stringValue, date];
     
+    //if no previous saves
+    if ([textView.text isEqual: @"All the events go here."]) {
+        textView.text =[[NSMutableString alloc] init];
+    }
+    
+    //If there is preexisting data saved
+    else {
+        eventData =[[NSMutableString alloc] init];
+        [NSMutableString appendString:eventData];
+        [NSMutableString appendString:eventData];
+      
+        textView.text = eventData;
+    }
 }
-
-
-//Open date view page
+    
+ //Open date view page
 -(IBAction)onClick:(id)sender
 {
    dateViewButton = (UIButton*)sender;
