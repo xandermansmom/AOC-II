@@ -47,16 +47,22 @@
 {
     //grab data from dateView
     
+    eventData= [NSString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
+    if ([textView.text isEqual: @"All the events go here..."])
     {
-        if (!allEvents)
-        {
-            allEvents = [[NSMutableString alloc] initWithCapacity:0];
-        }
-        [allEvents appendString: eventData];
-        textView.text = allEvents;
+        textView.text = eventData;
     }
-}
+    
+    else
+    {
+    allEvents = [[NSMutableString alloc]init];
+    }
+    
+    [allEvents appendString: eventData];
+    textView.text = allEvents;
+    }
 
+    
  //Open date view page
 -(IBAction)onClick:(id)sender
 {
