@@ -19,9 +19,12 @@
     UIButton *dateViewButton;
     NSString *stringValue;
     NSDate *date;
+    NSMutableString *eventData;
     IBOutlet UITextView *textView;
 }
 
 -(IBAction)onClick:(id)sender;
+
+-(void)didClose:(NSString*)myText date:(NSString*)dateString;
 
 @end

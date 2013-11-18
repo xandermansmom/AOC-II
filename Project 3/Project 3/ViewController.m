@@ -43,28 +43,20 @@
 }
 
 
-    -(void)didClose:eventData
-               date:(NSString*)dateString;
-
-    {
+-(void)didClose:(NSString*)myText date:(NSString*)dateString;
+{
     //grab data from dateView
-    eventData = [NSString stringWithFormat:@"%@\n%@\n\n\n", stringValue, date];
+    eventData  = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
     
-    //if no previous saves
-    if ([textView.text isEqual: @"All the events go here."]) {
-        textView.text =[[NSMutableString alloc] init];
-    }
-    
-    //If there is preexisting data saved
-    else {
-        eventData =[[NSMutableString alloc] init];
-        [NSMutableString appendString:eventData];
-        [NSMutableString appendString:eventData];
-      
+     if ([textView.text isEqual: @""])
+     {
+        textView.text =[[NSMutableString alloc] init]; }
+        else{
+        [eventData appendString:textView.text];
         textView.text = eventData;
     }
 }
-    
+
  //Open date view page
 -(IBAction)onClick:(id)sender
 {
