@@ -51,12 +51,12 @@
      {
         textView.text =[[NSMutableString alloc] init];
          textView.text = eventData;
-     }
+    }
       else {
           textView.text = nil;
           {
-              newData = [[NSMutableString alloc]init];
-              [newData appendString:textView.text];
+              newData = [[NSMutableString alloc]initWithCapacity:0];
+              [newData appendString:eventData];
           }
         }
 }

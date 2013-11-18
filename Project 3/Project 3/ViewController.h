@@ -19,7 +19,6 @@
     UIButton *dateViewButton;
     NSString *stringValue;
     NSDate *date;
-    NSMutableString *eventData;
     NSMutableString *newData;
     IBOutlet UITextView *textView;
 }
