@@ -46,15 +46,19 @@
 -(void)didClose:eventData
 {
     //grab data from dateView
-    newData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
-    
-     if ([textView.text isEqual: @"All the events go here..."])
+    textView.text = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
+      if ([textView.text isEqual: @"All the events go here..."])
      {
-        textView.text =[[NSMutableString alloc] init]; }
-        else{
-        [eventData appendString:textView.text];
-        textView.text = newData;
-    }
+        textView.text =[[NSMutableString alloc] init];
+         textView.text = eventData;
+     }
+      else {
+          textView.text = nil;
+          {
+              newData = [[NSMutableString alloc]init];
+              [newData appendString:textView.text];
+          }
+        }
 }
 
  //Open date view page
