@@ -123,6 +123,28 @@
     {
         eventData  = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
         
+        { //initialize dateformatter
+            NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
+            if (formatDate != nil)
+            {
+                //set date no earlier than today's date
+                date = [NSDate date];
+                
+                //set date format
+                [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
+                
+                dateString = [formatDate stringFromDate:date];
+                
+                //return date
+                date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
+                
+                if ([dateString isEqual: @""])
+                {
+                    dateString = @"There are currently no events scheduled.";
+                }
+            }
+        }
+        
         [delegate didClose:eventData];
     }
     
