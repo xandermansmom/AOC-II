@@ -43,17 +43,17 @@
 }
 
 
--(void)didClose:(NSString*)myText date:(NSString*)dateString;
+-(void)didClose:eventData
 {
     //grab data from dateView
-    eventData  = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
+    newData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
     
-     if ([textView.text isEqual: @""])
+     if ([textView.text isEqual: @"All the events go here..."])
      {
         textView.text =[[NSMutableString alloc] init]; }
         else{
         [eventData appendString:textView.text];
-        textView.text = eventData;
+        textView.text = newData;
     }
 }
 
