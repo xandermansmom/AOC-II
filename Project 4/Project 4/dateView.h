@@ -32,12 +32,9 @@
     IBOutlet UIDatePicker *datePicker;
     IBOutlet UILabel *leftSwipeLabel;
     UISwipeGestureRecognizer *leftSwiper;
-    UIModalTransitionStyle *viewController;
-    //NSObject<dateViewDelegate> *delegate;
+    UIModalTransitionStyle *ViewController;
+   
 }
-
-//@property (strong) id<dateViewDelegate> delegate;
-
 
 -(IBAction)closeKeyboard:(id)sender;
 

@@ -39,10 +39,8 @@
                     
                 }
                 
-    }
+    }   
 }
-
-
 
 -(void)didClose:eventData
 {
@@ -91,8 +89,6 @@
         {
             //join text and date in a string
             eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
-            
-           // [delegate didClose:eventData];
         }
         
         [self dismissViewControllerAnimated:true completion:nil];
@@ -100,6 +96,24 @@
     
  
 }
+
+//Text Field for Event Data
+-(IBAction)eventText:(id)sender
+{
+    myText = (UITextField*)sender;
+    if(myText != nil)
+    {
+        stringValue = [myText text];
+    }
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.text = @"";
+    
+    return true;
+}
+
 
 -(void)viewWillAppear:(BOOL)animated
     {

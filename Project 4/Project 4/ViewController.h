@@ -16,6 +16,7 @@
     UITextView *dateText;
     UIButton *saveButton;
     NSString *stringValue;
+    UITextField *myText;
     NSDate *date;
     NSString *dateString;
     NSMutableString *allEvents;

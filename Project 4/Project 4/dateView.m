@@ -21,9 +21,6 @@
     NSLog(@"The date of the event is %@", dateString);
 }
 
-//@synthesize delegate;
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,15 +32,6 @@
 
 - (void)viewDidLoad
 {
-    
-    //allocate and initialize right swiper
-    leftSwiper = [[UISwipeGestureRecognizer alloc]initWithTarget:self action: @selector(onSwipe:)];
-    
-    //set direction for swiper
-    leftSwiper.direction = UISwipeGestureRecognizerDirectionLeft;
-    
-    //add swipe gesture to the label
-    [leftSwipeLabel addGestureRecognizer:leftSwiper];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -59,13 +47,12 @@
 {
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
     {
-       
-        viewController *openControlView = [[viewController alloc]
-                                  initWithNibName:@"viewController" bundle: nil];
-        if(openControlView != nil)
+        ViewController *openEvent = [[ViewController alloc]
+                                  initWithNibName:@"ViewController" bundle: nil];
+        if(openEvent != nil)
         {
             
-            [self presentViewController:openControlView animated: true completion: nil];
+            [self presentViewController:openEvent animated: true completion: nil];
             
         }
         
@@ -141,43 +128,21 @@
         
     }
 }
-//Save date and Event data
-//-(IBAction)onSave:(id)sender
-//{
-    //saveThis = (UIButton*)sender;
-    //if (!date)
-        
-    //{
-        //initialize dateformatter
-        //NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
-        
-        //if (formatDate != nil)
-        //{
-            //set date no earlier than today's date
-            //date = [NSDate date];
-            
-            //set date format
-            //[formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
-            
-            //dateString = [formatDate stringFromDate:date];
-            
-            //assign and return date
-            //date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
-            
-        //}
-   // }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //allocate and initialize right swiper
+    leftSwiper = [[UISwipeGestureRecognizer alloc]initWithTarget:self action: @selector(onSwipe:)];
     
-    //check for string
-    //if (stringValue != nil)
-    //{
-        //join text and date in a string
-       // eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
-        
-        //[delegate didClose:eventData];
-   // }
+    //set direction for swiper
+    leftSwiper.direction = UISwipeGestureRecognizerDirectionLeft;
     
-   // [self dismissViewControllerAnimated:true completion:nil];
-//}
+    //add swipe gesture to the label
+    [leftSwipeLabel addGestureRecognizer:leftSwiper];
+    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+}
 
 
 @end
