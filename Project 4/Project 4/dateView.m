@@ -55,15 +55,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)onSwipe:(UISwipeGestureRecognizer*)recognizer
+{
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
+    {
+       
+        viewController *openControlView = [[viewController alloc]
+                                  initWithNibName:@"viewController" bundle: nil];
+        if(openControlView != nil)
+        {
+            
+            [self presentViewController:openControlView animated: true completion: nil];
+            
+        }
+        
+    }
+}
+
 
 //Close Keyboard
 -(IBAction)closeKeyboard:(id)sender
 {
-    //closeButton = (UIButton*)sender;
-    //if (closeButton != nil)
-   // {
-   //     [self.view endEditing:YES];
-   // }
+    closeButton = (UIButton*)sender;
+    if (closeButton != nil)
+    {
+        [self.view endEditing:YES];
+    }
 }
 
 //Text Field for Event Data

@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "dateView.h"
 
 @interface ViewController ()
 
@@ -18,20 +17,8 @@
 
 - (void)viewDidLoad
 {
-    
-    //allocate and initialize right swiper
-    rightSwiper = [[UISwipeGestureRecognizer alloc]initWithTarget:self action: @selector(onSwipe:)];
-    
-    //set direction for swiper
-    rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
-    
-    //add swipe gesture to the label
-    [swipeLabel addGestureRecognizer:rightSwiper];
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
-
+   
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -61,14 +48,14 @@
 {
     //grab data from dateView
     
-    {
-        if (!allEvents)
-        {
-            allEvents = [[NSMutableString alloc] initWithCapacity:0];
+   {
+     if (!allEvents)
+     {
+           allEvents = [[NSMutableString alloc] initWithCapacity:0];
         }
-        [allEvents appendString: eventData];
-        textView.text = allEvents;
-    }
+      [allEvents appendString: eventData];
+       textView.text = allEvents;
+   }
 }
 
 
@@ -113,6 +100,21 @@
     
  
 }
+
+-(void)viewWillAppear:(BOOL)animated
+    {
+        //allocate and initialize right swiper
+        rightSwiper = [[UISwipeGestureRecognizer alloc]initWithTarget:self action: @selector(onSwipe:)];
+        
+        //set direction for swiper
+        rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
+        
+        //add swipe gesture to the label
+        [swipeLabel addGestureRecognizer:rightSwiper];
+        
+        [super viewDidLoad];
+        // Do any additional setup after loading the view, typically from a nib.
+    }
 
 
 

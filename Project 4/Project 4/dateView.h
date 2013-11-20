@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 
 @protocol dateViewDelegate<NSObject>
 
@@ -21,6 +22,7 @@
 {
     UILabel *eventLabel;
     UITextField *myText;
+    UIButton *closeButton;
     NSString *stringValue;
     NSMutableString *eventData;
     NSDate *date;
@@ -30,6 +32,7 @@
     IBOutlet UIDatePicker *datePicker;
     IBOutlet UILabel *leftSwipeLabel;
     UISwipeGestureRecognizer *leftSwiper;
+    UIModalTransitionStyle *viewController;
     //NSObject<dateViewDelegate> *delegate;
 }
 
@@ -41,6 +44,10 @@
 -(IBAction)eventText:(id)sender;
 
 -(IBAction)datePicker:(id)sender;
+
+-(void)onSwipe:(UISwipeGestureRecognizer*)recognizer;
+
+
 
 
 
