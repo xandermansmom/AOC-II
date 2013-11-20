@@ -29,7 +29,7 @@
 
 -(IBAction)onSave:(id)sender;
 
-- (IBAction)swipeRightDetected:(UIGestureRecognizer *)sender;
+
 
 -(void)didClose:eventData;
 

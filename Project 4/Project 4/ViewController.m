@@ -115,11 +115,6 @@
 }
 
 
-- (IBAction)swipeRightDetected:(UIGestureRecognizer *)sender
-{
-    dateView *dateViewPage=[[dateView alloc] initWithNibName:@"dateViewPage" bundle:nil];
-    [self presentViewController:dateViewPage animated:YES completion:nil];
-}
 
 
 @end
