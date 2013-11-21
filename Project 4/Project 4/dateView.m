@@ -52,6 +52,20 @@
         if(openEvent != nil)
         {
             
+            {
+                //grab data from dateView
+                
+                {
+                    if (!allEvents)
+                    {
+                        allEvents = [[NSMutableString alloc] initWithCapacity:0];
+                    }
+                    [allEvents appendString: eventData];
+                    eventText.text = allEvents;
+                }
+            }
+            
+            
             [self presentViewController:openEvent animated: true completion: nil];
             
         }

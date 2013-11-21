@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad
 {
+
 }
-   
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -42,78 +42,48 @@
     }   
 }
 
--(void)didClose:eventData
-{
-    //grab data from dateView
-    
-   {
-     if (!allEvents)
-     {
-           allEvents = [[NSMutableString alloc] initWithCapacity:0];
-        }
-      [allEvents appendString: eventData];
-       textView.text = allEvents;
-   }
-}
 
 
 //Save data
 -(IBAction)onSave:(id)sender;
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (defaults != nil)
+        
     {
-        saveButton = (UIButton*)sender;
-        if (!date)
-            
-        {
-            //initialize dateformatter
-            NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
-            
-            if (formatDate != nil)
-            {
-                //set date no earlier than today's date
-                date = [NSDate date];
-                
-                //set date format
-                [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
-                
-                dateString = [formatDate stringFromDate:date];
-                
-                //assign and return date
-                date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
-                
-            }
-        }
         
-        //check for string
-        if (stringValue != nil)
+        //initialize dateformatter
+        NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
+      
+        if (formatDate != nil)
         {
-            //join text and date in a string
-            eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
+            //set date no earlier than today's date
+            date = [NSDate date];
+            
+            //set date format
+            [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
+            
+            dateString = [formatDate stringFromDate:date];
+            
+            //assign and return date
+            date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
+            
         }
-        
-        [self dismissViewControllerAnimated:true completion:nil];
     }
     
- 
-}
-
-//Text Field for Event Data
--(IBAction)eventText:(id)sender
-{
-    myText = (UITextField*)sender;
-    if(myText != nil)
+    //check for string
+    if (stringValue != nil)
     {
-        stringValue = [myText text];
+        //join text and date in a string
+        eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
     }
-}
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    textField.text = @"";
     
-    return true;
+
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
+
+    
 
 -(void)viewWillAppear:(BOOL)animated
     {
