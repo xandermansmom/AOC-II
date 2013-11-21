@@ -25,11 +25,11 @@
     UIButton *closeButton;
     NSString *stringValue;
     NSMutableString *eventData;
-    NSMutableString *allEvents;
     NSDate *date;
     UIDatePicker *picker;
     NSString *dateString;
-    IBOutlet UITextView *eventText;
+    NSMutableString *allEvents;
+    IBOutlet UITextField *eventText;
     IBOutlet UIDatePicker *datePicker;
     IBOutlet UILabel *leftSwipeLabel;
     UISwipeGestureRecognizer *leftSwiper;

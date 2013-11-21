@@ -51,27 +51,23 @@
                                   initWithNibName:@"ViewController" bundle: nil];
         if(openEvent != nil)
         {
+            //grab data from dateView
             
             {
-                //grab data from dateView
-                
+                if (!allEvents)
                 {
-                    if (!allEvents)
-                    {
-                        allEvents = [[NSMutableString alloc] initWithCapacity:0];
-                    }
-                    [allEvents appendString: eventData];
-                    eventText.text = allEvents;
+                    allEvents = [[NSMutableString alloc] initWithCapacity:0];
                 }
+                [allEvents appendString: eventData];
+                eventText.text = allEvents;
             }
-            
-            
+        }
             [self presentViewController:openEvent animated: true completion: nil];
             
         }
         
     }
-}
+
 
 
 //Close Keyboard

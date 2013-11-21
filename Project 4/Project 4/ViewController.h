@@ -19,7 +19,6 @@
     UITextField *myText;
     NSDate *date;
     NSString *dateString;
-    NSMutableString *allEvents;
     NSMutableString *eventData;
     IBOutlet UITextView *textView;
     IBOutlet UILabel *swipeLabel;
