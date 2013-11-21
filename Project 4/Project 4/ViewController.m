@@ -74,10 +74,14 @@
         
         
         dataStorage *newData = [dataStorage GetInstance];
-        NSString *test = newData.stringValue;
-        //UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Alert" message:test delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        NSString *stringTest = newData.stringValue;
+        NSString *dateTest = newData.dateString;
+        NSString *formattedEvent =[NSString stringWithFormat: @"%@ \n %@ \n\n"
+        ,stringTest, dateTest];
+        NSLog(@"%@", formattedEvent);
         
-        //[alert show];
+        
+        
         [super viewDidLoad];
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -93,7 +97,7 @@
                 allEvents = [[NSMutableString alloc] initWithCapacity:0];
             }
             
-            [allEvents appendString: eventData];
+            [allEvents appendString:textView.text];
             textView.text = allEvents;
         }
     }

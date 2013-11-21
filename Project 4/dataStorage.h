@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface dataStorage : NSObject
 
 @property NSString *stringValue;
@@ -15,11 +16,6 @@
 
 //static method
 +(dataStorage*)GetInstance;
-
-+(id)alloc;
-
--(id)init;
-
 
 
 @end

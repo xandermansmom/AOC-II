@@ -18,8 +18,7 @@
 
 -(void)didClose:eventData
 {
-    NSLog(@"%@", stringValue);
-    NSLog(@"The date of the event is %@", dateString);
+   
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,7 +34,7 @@
 {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+// Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,13 +43,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+//set up swipe gesture
 -(void)onSwipe:(UISwipeGestureRecognizer*)recognizer
 {
+    //set up action and direction of swipe gesture
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
     {
         ViewController *closeEvent = [[ViewController alloc]
                                   initWithNibName:@"ViewController" bundle: nil];
-    
+        
+               //if there is no date chosen
                if (!date)
                 
             {
@@ -72,19 +74,13 @@
                     
                 }
             }
-            
-            //check for string
-            if (stringValue != nil)
-            {
-                //join text and date in a string
-                eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
-            }
+                    
         
-            NSString *eventString = eventText.text;
-            NSString *dateTimeString = dateString;
-            dataStorage *newData = [dataStorage GetInstance];
-            newData.stringValue = eventString;
-            newData.dateString = dateTimeString;
+//create singleton instances of text and date data
+NSString *eventString = eventText.text;
+        dataStorage *newData = [dataStorage GetInstance];
+        newData.stringValue = eventString;
+        newData.dateString = dateString;
         
         [self presentViewController:closeEvent animated: true completion: nil];
         }
@@ -111,6 +107,7 @@
     }
 }
 
+//editing of text field that allows you to prohibit return value
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     textField.text = @"";
@@ -141,28 +138,18 @@
                 //set date format
                 [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
                 
+                //create a string from the date entered
                 dateString = [formatDate stringFromDate:date];
-                
-                //return date
-                date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
-                
-                if ([dateString isEqual: @""])
-                {
-                    dateString = @"There are currently no events scheduled.";
-                }
-                else
-                {
-                    
-                }
             }
         }
         
-    }
+    }   
 }
 
+//Left Swiper
 -(void)viewWillAppear:(BOOL)animated
 {
-    //allocate and initialize right swiper
+    //allocate and initialize left swiper
     leftSwiper = [[UISwipeGestureRecognizer alloc]initWithTarget:self action: @selector(onSwipe:)];
     
     //set direction for swiper

@@ -20,7 +20,11 @@ static dataStorage *_instance = nil;
 //Set pointer
 +(dataStorage*)GetInstance
 {
-    return _instance;
+if (_instance == nil)
+{
+    _instance = [[self alloc]init];
+}
+return _instance;
 }
 
 +(id)alloc
