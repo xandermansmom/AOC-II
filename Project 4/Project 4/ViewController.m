@@ -25,14 +25,18 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    
     // Dispose of any resources that can be recreated.
 }
 
 
+//Set up swipe gesture
 -(void)onSwipe:(UISwipeGestureRecognizer*)recognizer
 {
+    //set direction of swipe gesture to right
     if (recognizer.direction == UISwipeGestureRecognizerDirectionRight)
     {
+                //alocate and initialize dateView
                 dateView *openDateView = [[dateView alloc]
                                           initWithNibName:@"dateView" bundle: nil];
                 if(openDateView != nil)
@@ -46,7 +50,6 @@
 }
 
 
-
 //Save data
 -(IBAction)onSave:(id)sender;
 {
@@ -56,10 +59,9 @@
     {
         
     }
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
     
-    [self dismissViewControllerAnimated:true completion:nil];
-}
-
 
 -(void)viewWillAppear:(BOOL)animated
     {
@@ -73,35 +75,52 @@
         [swipeLabel addGestureRecognizer:rightSwiper];
         
         
+        //creating singleton string and date instances and formatting them
         dataStorage *newData = [dataStorage GetInstance];
         NSString *stringTest = newData.stringValue;
         NSString *dateTest = newData.dateString;
-        NSString *formattedEvent =[NSString stringWithFormat: @"%@ \n %@ \n\n"
+        formattedEvent =[NSString stringWithFormat: @"%@ \n %@ \n\n"
         ,stringTest, dateTest];
-        NSLog(@"%@", formattedEvent);
         
-        
+        //No previous events entered
+        if (allEvents == nil)
+        {
+            textView.text = formattedEvent;
+             NSLog(@"%@", formattedEvent);
+        }
+       
+        //if previous events entered
+        if (!allEvents)
+                {
+                    allEvents = [[NSString alloc] init];
+                    textView.text = allEvents;
+                }
+        // previously saved events
+        else if(formattedEvent != nil)
+        {
+            if (textView.text == nil)
+            {
+        }
+           else if([textView.text isEqual:@"All the events go here...."])
+               //first event entry
+               textView.text = formattedEvent;
+        }
+    
+        //if there is previously saved events
+            else
+            {
+                allEvents = [[NSString alloc]init];
+                [allEvents stringByAppendingString: formattedEvent];
+                textView.text = allEvents;
+                NSLog(@"%@", allEvents);
+            }
         
         [super viewDidLoad];
+    
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
--(void)didClose:eventData
-{
-    {
-        //grab data from dateView
-        
-        {
-            if (!allEvents)
-            {
-                allEvents = [[NSMutableString alloc] initWithCapacity:0];
-            }
-            
-            [allEvents appendString:textView.text];
-            textView.text = allEvents;
-        }
-    }
 }
+    
+
 
 
 @end

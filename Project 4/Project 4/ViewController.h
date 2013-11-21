@@ -20,8 +20,8 @@
     UITextField *myText;
     NSDate *date;
     NSString *dateString;
-    NSMutableString *allEvents;
-    NSMutableString *eventData;
+    NSString *formattedEvent;
+    NSString *allEvents;
     IBOutlet UITextView *textView;
     IBOutlet UILabel *swipeLabel;
     UISwipeGestureRecognizer *rightSwiper;
@@ -33,7 +33,6 @@
 
 -(void)onSwipe:(UISwipeGestureRecognizer*)recognizer;
 
--(void)didClose:eventData;
 
 
 @end

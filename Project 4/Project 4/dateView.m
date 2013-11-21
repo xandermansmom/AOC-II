@@ -140,7 +140,9 @@ NSString *eventString = eventText.text;
                 
                 //create a string from the date entered
                 dateString = [formatDate stringFromDate:date];
-            }
+                
+                //assign and return date
+                date = [NSString stringWithFormat: @"%@", dateString];            }
         }
         
     }   

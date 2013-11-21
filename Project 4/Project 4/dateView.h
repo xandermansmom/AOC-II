@@ -23,17 +23,15 @@
     UILabel *eventLabel;
     UITextField *myText;
     UIButton *closeButton;
-    NSString *stringValue;
-    NSMutableString *eventData;
     NSDate *date;
-    UIDatePicker *picker;
+    NSString *stringValue;
     NSString *dateString;
+    UIDatePicker *picker;
     IBOutlet UITextField *eventText;
     IBOutlet UIDatePicker *datePicker;
     IBOutlet UILabel *leftSwipeLabel;
     UISwipeGestureRecognizer *leftSwiper;
-    UIModalTransitionStyle *ViewController;
-   
+    UIModalTransitionStyle *ViewController;   
 }
 
 -(IBAction)closeKeyboard:(id)sender;
