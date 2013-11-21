@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "dateView.h"
+#import "dataStorage.h"
 
 @interface ViewController : UIViewController 
 //<dateViewDelegate, UITextViewDelegate>
@@ -19,6 +20,7 @@
     UITextField *myText;
     NSDate *date;
     NSString *dateString;
+    NSMutableString *allEvents;
     NSMutableString *eventData;
     IBOutlet UITextView *textView;
     IBOutlet UILabel *swipeLabel;

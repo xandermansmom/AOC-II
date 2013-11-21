@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface dataStorage : NSObject
+
+//static method
 +(dataStorage*)GetInstance;
--(id)alloc;
+
+//create instance
++(void)CreateInstance;
+
+//instance method
+-(void)printSettings;
 
 
 @end

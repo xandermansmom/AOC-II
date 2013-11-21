@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "dataStorage.h"
 
 @protocol dateViewDelegate<NSObject>
 
@@ -17,7 +18,6 @@
 @end
 
 @interface dateView : UIViewController
-//<dateViewDelegate, UITextFieldDelegate, UIPickerViewDelegate>
 
 {
     UILabel *eventLabel;
@@ -28,7 +28,6 @@
     NSDate *date;
     UIDatePicker *picker;
     NSString *dateString;
-    NSMutableString *allEvents;
     IBOutlet UITextField *eventText;
     IBOutlet UIDatePicker *datePicker;
     IBOutlet UILabel *leftSwipeLabel;

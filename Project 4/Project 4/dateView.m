@@ -47,7 +47,7 @@
 {
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
     {
-        ViewController *openEvent = [[ViewController alloc]
+        ViewController *closeEvent = [[ViewController alloc]
                                   initWithNibName:@"ViewController" bundle: nil];
     
                if (!date)
@@ -77,28 +77,12 @@
             {
                 //join text and date in a string
                 eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
-                
             }
-        
-        if(openEvent != nil)
-        {
-            //grab data from dateView
-            
-            {
-                if (!allEvents)
-                {
-                    allEvents = [[NSMutableString alloc] initWithCapacity:0];
-                }
-                [allEvents appendString: eventData];
-                eventText.text = allEvents;
-            }
-        }
-        
-            [self dismissViewControllerAnimated:true completion:nil];
+                          
+            [self presentViewController:closeEvent animated: true completion: nil];
         }
         
 }
-
   
 //Close Keyboard
 -(IBAction)closeKeyboard:(id)sender
