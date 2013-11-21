@@ -10,14 +10,16 @@
 
 @interface dataStorage : NSObject
 
+@property NSString *stringValue;
+@property NSString *dateString;
+
 //static method
 +(dataStorage*)GetInstance;
 
-//create instance
-+(void)CreateInstance;
++(id)alloc;
 
-//instance method
--(void)printSettings;
+-(id)init;
+
 
 
 @end

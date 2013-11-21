@@ -8,19 +8,13 @@
 
 #import "dataStorage.h"
 
+
 @implementation dataStorage
+
+@synthesize dateString, stringValue;
 
 //hold pointer to self
 static dataStorage *_instance = nil;
-
-//create instance
-+(void)CreateInstance
-    {
-        if (_instance == nil)
-        {
-            [[self alloc]init];
-        }    
-    }
 
 
 //Set pointer
@@ -46,9 +40,7 @@ static dataStorage *_instance = nil;
     return self;
 }
 
--(void)printSettings
-{
-    
-}
+
+
 
 @end

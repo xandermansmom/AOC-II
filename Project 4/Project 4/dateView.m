@@ -7,6 +7,7 @@
 //
 
 #import "dateView.h"
+#import "dataStorage.h"
 
 @interface dateView ()
 
@@ -78,8 +79,14 @@
                 //join text and date in a string
                 eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
             }
-                          
-            [self presentViewController:closeEvent animated: true completion: nil];
+        
+            NSString *eventString = eventText.text;
+            NSString *dateTimeString = dateString;
+            dataStorage *newData = [dataStorage GetInstance];
+            newData.stringValue = eventString;
+            newData.dateString = dateTimeString;
+        
+        [self presentViewController:closeEvent animated: true completion: nil];
         }
         
 }

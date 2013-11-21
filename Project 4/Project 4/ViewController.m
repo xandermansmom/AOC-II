@@ -18,9 +18,8 @@
 
 - (void)viewDidLoad
 {
-    [dataStorage CreateInstance];
     
-    [[dataStorage GetInstance] printSettings];
+    [dataStorage GetInstance];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +72,12 @@
         //add swipe gesture to the label
         [swipeLabel addGestureRecognizer:rightSwiper];
         
+        
+        dataStorage *newData = [dataStorage GetInstance];
+        NSString *test = newData.stringValue;
+        //UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Alert" message:test delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        //[alert show];
         [super viewDidLoad];
         // Do any additional setup after loading the view, typically from a nib.
     }
