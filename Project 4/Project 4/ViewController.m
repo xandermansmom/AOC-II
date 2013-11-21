@@ -50,7 +50,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (defaults != nil)
         
-    {
+    {  
         //initialize dateformatter
         NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
       
@@ -76,18 +76,7 @@
         //join text and date in a string
         eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
     }
-{  
-    //grab data from dateView
-    
-    {
-        if (!allEvents)
-        {
-            allEvents = [[NSMutableString alloc] initWithCapacity:0];
-        }
-        [allEvents appendString: eventData];
-        eventText.text = allEvents;
-    }
-}
+
     [self dismissViewControllerAnimated:true completion:nil];
 }
 

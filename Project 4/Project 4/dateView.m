@@ -49,6 +49,37 @@
     {
         ViewController *openEvent = [[ViewController alloc]
                                   initWithNibName:@"ViewController" bundle: nil];
+    
+               if (!date)
+                
+            {
+                //initialize dateformatter
+                NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
+                
+                if (formatDate != nil)
+                {
+                    //set date no earlier than today's date
+                    date = [NSDate date];
+                    
+                    //set date format
+                    [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
+                    
+                    dateString = [formatDate stringFromDate:date];
+                    
+                    //assign and return date
+                    date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
+                    
+                }
+            }
+            
+            //check for string
+            if (stringValue != nil)
+            {
+                //join text and date in a string
+                eventData = [NSMutableString stringWithFormat:@"%@ \n %@ \n\n", stringValue, date];
+                
+            }
+        
         if(openEvent != nil)
         {
             //grab data from dateView
@@ -62,14 +93,13 @@
                 eventText.text = allEvents;
             }
         }
-            [self presentViewController:openEvent animated: true completion: nil];
-            
+        
+            [self dismissViewControllerAnimated:true completion:nil];
         }
         
-    }
+}
 
-
-
+  
 //Close Keyboard
 -(IBAction)closeKeyboard:(id)sender
 {

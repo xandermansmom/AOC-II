@@ -25,6 +25,7 @@
 		6ED6DEEA183C007700C4CE2D /* Project_4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED6DEE9183C007700C4CE2D /* Project_4Tests.m */; };
 		6ED6DF05183C077800C4CE2D /* dateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED6DF03183C077800C4CE2D /* dateView.m */; };
 		6ED6DF06183C077800C4CE2D /* dateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED6DF04183C077800C4CE2D /* dateView.xib */; };
+		6ED6DF09183D98D300C4CE2D /* dataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED6DF08183D98D300C4CE2D /* dataStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		6ED6DF02183C077800C4CE2D /* dateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dateView.h; sourceTree = "<group>"; };
 		6ED6DF03183C077800C4CE2D /* dateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dateView.m; sourceTree = "<group>"; };
 		6ED6DF04183C077800C4CE2D /* dateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateView.xib; sourceTree = "<group>"; };
+		6ED6DF07183D98D300C4CE2D /* dataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dataStorage.h; path = ../dataStorage.h; sourceTree = "<group>"; };
+		6ED6DF08183D98D300C4CE2D /* dataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dataStorage.m; path = ../dataStorage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,10 +130,12 @@
 				6ED6DED0183C007600C4CE2D /* ViewController.h */,
 				6ED6DED1183C007600C4CE2D /* ViewController.m */,
 				6ED6DED3183C007600C4CE2D /* ViewController.xib */,
-				6ED6DEBF183C007500C4CE2D /* Supporting Files */,
 				6ED6DF02183C077800C4CE2D /* dateView.h */,
 				6ED6DF03183C077800C4CE2D /* dateView.m */,
 				6ED6DF04183C077800C4CE2D /* dateView.xib */,
+				6ED6DF07183D98D300C4CE2D /* dataStorage.h */,
+				6ED6DF08183D98D300C4CE2D /* dataStorage.m */,
+				6ED6DEBF183C007500C4CE2D /* Supporting Files */,
 			);
 			path = "Project 4";
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				6ED6DEC9183C007500C4CE2D /* AppDelegate.m in Sources */,
 				6ED6DED2183C007600C4CE2D /* ViewController.m in Sources */,
 				6ED6DF05183C077800C4CE2D /* dateView.m in Sources */,
+				6ED6DF09183D98D300C4CE2D /* dataStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
