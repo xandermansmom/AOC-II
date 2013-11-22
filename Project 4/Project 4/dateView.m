@@ -64,8 +64,7 @@
                     [formatDate setDateFormat:@"MMMM dd, @ h:mm a"];
                     
                     dateString = [formatDate stringFromDate:date];
-                    
-                    
+                      
                 }
             }
                     

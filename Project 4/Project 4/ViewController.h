@@ -22,7 +22,7 @@
     NSDate *date;
     NSString *dateString;
     NSString *formattedEvent;
-    NSString *allEvents;
+    NSMutableString *allEvents;
     IBOutlet UITextView *textView;
     IBOutlet UILabel *swipeLabel;
     UISwipeGestureRecognizer *rightSwiper;
