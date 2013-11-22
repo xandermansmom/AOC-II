@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "dateView.h"
 #import "dataStorage.h"
+
 
 @interface ViewController : UIViewController 
 //<dateViewDelegate, UITextViewDelegate>
 
 {
+    dataStorage *GetInstance;
     UITextView *dateText;
     UIButton *saveButton;
     NSString *stringValue;

@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface dataStorage : NSObject
+{
+    NSString *stringValue;
+    NSString *dateString;
+}
 
-@property NSString *stringValue;
-@property NSString *dateString;
+@property (nonatomic) NSString *stringValue;
+@property (nonatomic) NSString *dateString;
 
 //static method
 +(dataStorage*)GetInstance;
+
 
 
 @end

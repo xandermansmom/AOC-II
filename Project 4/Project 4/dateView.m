@@ -16,10 +16,7 @@
 
 @implementation dateView
 
--(void)didClose:eventData
-{
-   
-}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +29,6 @@
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
 // Do any additional setup after loading the view from its nib.
 }
@@ -69,8 +65,6 @@
                     
                     dateString = [formatDate stringFromDate:date];
                     
-                    //assign and return date
-                    date = [NSMutableString stringWithFormat:@"The date of the event is %@", dateString];
                     
                 }
             }

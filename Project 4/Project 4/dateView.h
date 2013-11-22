@@ -12,14 +12,12 @@
 
 @protocol dateViewDelegate<NSObject>
 
-@required
--(void)didClose:eventData;
-
 @end
 
 @interface dateView : UIViewController
 
 {
+    dataStorage *GetInstance;
     UILabel *eventLabel;
     UITextField *myText;
     UIButton *closeButton;
@@ -41,7 +39,6 @@
 -(IBAction)datePicker:(id)sender;
 
 -(void)onSwipe:(UISwipeGestureRecognizer*)recognizer;
-
 
 
 

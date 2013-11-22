@@ -10,8 +10,12 @@
 
 
 @implementation dataStorage
+{
+    dataStorage *newData;
+}
 
-@synthesize dateString, stringValue;
+@synthesize dateString;
+@synthesize stringValue;
 
 //hold pointer to self
 static dataStorage *_instance = nil;
