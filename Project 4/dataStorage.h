@@ -14,8 +14,8 @@
     NSString *dateString;
 }
 
-@property (nonatomic) NSString *stringValue;
-@property (nonatomic) NSString *dateString;
+@property (nonatomic, retain) NSString *stringValue;
+@property (nonatomic, retain) NSString *dateString;
 
 //static method
 +(dataStorage*)GetInstance;

@@ -23,6 +23,8 @@
     NSString *dateString;
     NSString *formattedEvent;
     NSMutableString *allEvents;
+    UIAlertView *alert;
+    UIAlertView *savedAlert;
     IBOutlet UITextView *textView;
     IBOutlet UILabel *swipeLabel;
     UISwipeGestureRecognizer *rightSwiper;

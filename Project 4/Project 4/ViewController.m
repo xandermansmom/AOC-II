@@ -20,6 +20,10 @@
 - (void)viewDidLoad
 {
     [dataStorage GetInstance];
+    
+    allEvents = [[NSMutableString alloc] init];
+    
+    formattedEvent = [[NSUserDefaults standardUserDefaults] objectForKey:@"saveData"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,28 +47,62 @@
                     
                     [self presentViewController:openDateView animated: true completion: nil];
                     
-                }
+            }
     }   
 }
 
 -(IBAction)onSave:(id)sender;
 {
     NSString *saveData = formattedEvent;
-     
-    //Store the data
+    
+    //declare defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (defaults != nil)
-        
+    
+    //Sets the value of the specified default key
+    [defaults setObject:formattedEvent forKey:@"saveData"];
+    
+    
+    //check for empty string allocate and initialize alert message
+     if (defaults == nil)
     {
-        [defaults setObject:saveData forKey:@"saveButton"];
-        
-        [defaults synchronize];
-         
+        alert = [[UIAlertView alloc]initWithTitle:@"Did not save!"
+                    message:@"Please enter an event."
+                    delegate:self
+                    cancelButtonTitle:@"Close"
+                    otherButtonTitles: nil];
     }
-        [self dismissViewControllerAnimated:true completion:nil];
+    
+    //Check for empty value
+   else         
+    {   //Allocate and intialize alert message for non empty value
+        savedAlert = [[UIAlertView alloc]initWithTitle:@"Saved!"
+                message: @"Your Event has been saved!"
+                delegate: self
+                cancelButtonTitle: @"Close"
+                otherButtonTitles: nil];
+               
+    }
+  
+                //show alert
+                if(alert)
+                {
+                    [alert show];
+                }
+        
+                else if(savedAlert)
+                {
+                    [savedAlert show];
+                }
+    
+        
+    //actually saving the data
+    [defaults synchronize];
+    
+    [self dismissViewControllerAnimated:true completion:nil];
     
     NSLog (@"%@", saveData);
-    }
+    
+}
 
 -(void)viewWillAppear:(BOOL)animated
     {
@@ -81,26 +119,13 @@
         dataStorage *newData = [dataStorage GetInstance];
         NSString *stringTest = newData.stringValue;
         NSString *dateTest = newData.dateString;
-        formattedEvent =[NSString stringWithFormat: @"%@ \n %@ \n\n" ,stringTest, dateTest];
- 
-        //if no previous events entered
-        if(textView.text == nil || [textView.text isEqual:@"All the events go here...."])
+        if (stringTest)
+            
         {
-        }
+            formattedEvent =[NSString stringWithFormat: @"%@ \n %@ \n\n" ,stringTest, dateTest];
             
-            
-            
-        {       textView.text = formattedEvent;
-                NSLog(@"%@", formattedEvent);
-        }
-              
-        //if previous events entered
-        if (allEvents!= nil)
-            {
-              allEvents = [[NSMutableString alloc] initWithCapacity:0];
-              [allEvents appendString: formattedEvent];
-              textView.text = allEvents;
-              NSLog(@"%@", textView.text);
+            [allEvents appendString:formattedEvent];
+            textView.text = allEvents;
         }
         
         [super viewDidLoad];

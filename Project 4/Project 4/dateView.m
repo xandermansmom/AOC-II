@@ -45,10 +45,8 @@
     //set up action and direction of swipe gesture
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
     {
-        ViewController *closeEvent = [[ViewController alloc]
-                                  initWithNibName:@"ViewController" bundle: nil];
-        
-               //if there is no date chosen
+    
+                //if there is no date chosen
                if (!date)
                 
             {
@@ -75,7 +73,7 @@ NSString *eventString = eventText.text;
         newData.stringValue = eventString;
         newData.dateString = dateString;
         
-        [self presentViewController:closeEvent animated: true completion: nil];
+        [self dismissViewControllerAnimated:true completion:nil];
         }
         
 }
