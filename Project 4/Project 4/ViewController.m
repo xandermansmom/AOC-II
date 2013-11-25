@@ -132,5 +132,19 @@
     
         // Do any additional setup after loading the view, typically from a nib.
         }
+
+-(BOOL)textFieldShouldReturn: (UITextField*)formattedEvent
+{
+    [self resignFirstResponder];
+    return YES;  
+}
+
+-(void)applicationDidBecomeActive:(UIApplication*)application
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *stringValue;
+    NSString *dateString;
+    ViewController.myText = formattedEvent;
+}
     
 @end

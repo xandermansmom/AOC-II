@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic, retain) NSString *dateString;
+@property (nonatomic, retain) UIButton *saveButton;
 
 //static method
 +(dataStorage*)GetInstance;
