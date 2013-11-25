@@ -142,9 +142,8 @@
 -(void)applicationDidBecomeActive:(UIApplication*)application
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *stringValue;
-    NSString *dateString;
-    ViewController.myText = formattedEvent;
+    formattedEvent = [defaults stringForKey:@"saveData"];
+    textView.text = formattedEvent;
 }
     
 @end
