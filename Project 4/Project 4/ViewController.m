@@ -26,7 +26,6 @@
     formattedEvent = [[NSUserDefaults standardUserDefaults] objectForKey:@"saveData"];
     
     textView.text = formattedEvent;
-    [textView.text stringByAppendingString:allEvents];
     
 }
 
@@ -63,7 +62,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     //Sets the value of the specified default key
-    [defaults setObject:formattedEvent forKey:@"saveData"];
+    [defaults setObject:allEvents forKey:@"saveData"];
     
     
     //check for empty string allocate and initialize alert message
