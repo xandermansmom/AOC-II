@@ -24,6 +24,10 @@
     allEvents = [[NSMutableString alloc] init];
     
     formattedEvent = [[NSUserDefaults standardUserDefaults] objectForKey:@"saveData"];
+    
+    textView.text = formattedEvent;
+    [textView.text stringByAppendingString:allEvents];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,7 +101,7 @@
         
     //actually saving the data
     [defaults synchronize];
-    
+  
     [self dismissViewControllerAnimated:true completion:nil];
     
     NSLog (@"%@", saveData);
@@ -133,11 +137,6 @@
         // Do any additional setup after loading the view, typically from a nib.
         }
 
--(BOOL)textFieldShouldReturn: (UITextField*)formattedEvent
-{
-    [self resignFirstResponder];
-    return YES;  
-}
 
 -(void)applicationDidBecomeActive:(UIApplication*)application
 {
